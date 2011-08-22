@@ -1,0 +1,28 @@
+Oct  7 09:16:21 linux-ap8r sshd[5861]: error: PAM: Authentication failure for root from 172.18.1.13 
+Oct  7 09:15:44 linux-ap8r sshd[5853]: error: PAM: User not known to the underlying authentication module for illegal user jane from 172.18.1.13 
+Oct  7 09:16:18 linux-ap8r sshd[5861]: error: PAM: Authentication failure for root from 172.18.1.13 
+Oct  7 09:15:37 linux-ap8r sshd[5853]: error: PAM: User not known to the underlying authentication module for illegal user jane from 172.18.1.13 
+Oct  7 09:15:26 linux-ap8r sshd[5853]: error: PAM: User not known to the underlying authentication module for illegal user jane from 172.18.1.13 
+Oct  7 09:15:29 linux-ap8r sshd[5853]: error: PAM: User not known to the underlying authentication module for illegal user jane from 172.18.1.13 
+Oct  7 09:15:11 linux-ap8r sshd[5827]: error: PAM: Authentication failure for root from 172.18.1.13 
+Oct  7 09:15:09 linux-ap8r sshd[5827]: error: PAM: Authentication failure for root from 172.18.1.13 
+Oct  7 09:15:09 linux-ap8r sshd[5827]: error: PAM: Authentication failure for root from 172.18.1.13 
+Oct  6 14:21:48 linux-ap8r sshd[4422]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:21:23 linux-ap8r sshd[4315]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:21:22 linux-ap8r sshd[4315]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:21:21 linux-ap8r sshd[4315]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:21:20 linux-ap8r sshd[4310]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:21:19 linux-ap8r sshd[4310]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:21:18 linux-ap8r sshd[4310]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:11:24 linux-ap8r sshd[4287]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:11:23 linux-ap8r sshd[4287]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:11:22 linux-ap8r sshd[4287]: error: PAM: User not known to the underlying authentication module for illegal user root43212 from 172.18.1.26 
+Oct  6 14:11:19 linux-ap8r sshd[4282]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:18 linux-ap8r sshd[4282]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:17 linux-ap8r sshd[4282]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:15 linux-ap8r sshd[4277]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:14 linux-ap8r sshd[4277]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:13 linux-ap8r sshd[4277]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:10 linux-ap8r sshd[4272]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:09 linux-ap8r sshd[4272]: error: PAM: Authentication failure for root from 172.18.1.26 
+Oct  6 14:11:08 linux-ap8r sshd[4272]: error: PAM: Authentication failure for root from 172.18.1.26 

@@ -1,0 +1,38 @@
+Oct  7 11:56:10 linux-ap8r SuSEfirewall2: Firewall rules successfully set 
+Oct  7 11:56:10 linux-ap8r SuSEfirewall2: batch committing... 
+Oct  7 11:56:10 linux-ap8r SuSEfirewall2: Setting up rules from /etc/sysconfig/SuSEfirewall2 ... 
+Oct  7 09:16:21 linux-ap8r sshd[5861]: Failed keyboard-interactive/pam for root from 172.18.1.13 port 1061 ssh2 
+Oct  7 09:15:44 linux-ap8r sshd[5853]: Failed keyboard-interactive/pam for invalid user jane from 172.18.1.13 port 1060 ssh2 
+Oct  7 09:15:29 linux-ap8r sshd[5853]: Failed keyboard-interactive/pam for invalid user jane from 172.18.1.13 port 1060 ssh2 
+Oct  7 09:15:11 linux-ap8r sshd[5827]: Failed keyboard-interactive/pam for root from 172.18.1.13 port 1059 ssh2 
+Oct  7 09:15:24 linux-ap8r sshd[5853]: Invalid user jane from 172.18.1.13 
+Oct  7 09:15:26 linux-ap8r sshd[5853]: Failed keyboard-interactive/pam for invalid user jane from 172.18.1.13 port 1060 ssh2 
+Oct  7 09:15:12 linux-ap8r sshd[5827]: Failed keyboard-interactive/pam for root from 172.18.1.13 port 1059 ssh2 
+Oct  7 09:15:12 linux-ap8r sshd[5827]: Failed keyboard-interactive/pam for root from 172.18.1.13 port 1059 ssh2 
+Oct  6 14:27:30 linux-ap8r sshd[4432]: Accepted keyboard-interactive/pam for root from 172.18.1.26 port 32804 ssh2 
+Oct  6 14:27:32 linux-ap8r sshd[4432]: Received disconnect from 172.18.1.26: 11: disconnected by user 
+Oct  6 14:21:42 linux-ap8r sshd[4388]: Received disconnect from 172.18.1.26: 11: disconnected by user 
+Oct  6 14:21:41 linux-ap8r sshd[4388]: Accepted keyboard-interactive/pam for root from 172.18.1.26 port 38473 ssh2 
+Oct  6 14:21:38 linux-ap8r sshd[4354]: Received disconnect from 172.18.1.26: 11: disconnected by user 
+Oct  6 14:21:36 linux-ap8r sshd[4354]: Accepted keyboard-interactive/pam for root from 172.18.1.26 port 38472 ssh2 
+Oct  6 14:21:33 linux-ap8r sshd[4320]: Received disconnect from 172.18.1.26: 11: disconnected by user 
+Oct  6 14:21:31 linux-ap8r sshd[4320]: Accepted keyboard-interactive/pam for root from 172.18.1.26 port 38471 ssh2 
+Oct  6 14:21:23 linux-ap8r sshd[4315]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 38470 ssh2 
+Oct  6 14:21:22 linux-ap8r sshd[4315]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 38470 ssh2 
+Oct  6 14:21:21 linux-ap8r sshd[4315]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 38470 ssh2 
+Oct  6 14:21:21 linux-ap8r sshd[4315]: Invalid user root43212 from 172.18.1.26 
+Oct  6 14:21:20 linux-ap8r sshd[4310]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 46478 ssh2 
+Oct  6 14:21:19 linux-ap8r sshd[4310]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 46478 ssh2 
+Oct  6 14:21:18 linux-ap8r sshd[4310]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 46478 ssh2 
+Oct  6 14:21:17 linux-ap8r sshd[4310]: Invalid user root43212 from 172.18.1.26 
+Oct  6 14:11:24 linux-ap8r sshd[4287]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 43579 ssh2 
+Oct  6 14:11:23 linux-ap8r sshd[4287]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 43579 ssh2 
+Oct  6 14:11:22 linux-ap8r sshd[4287]: Failed keyboard-interactive/pam for invalid user root43212 from 172.18.1.26 port 43579 ssh2 
+Oct  6 14:11:21 linux-ap8r sshd[4287]: Invalid user root43212 from 172.18.1.26 
+Oct  6 13:58:03 linux-ap8r sshd[4186]: Received disconnect from 172.18.1.26: 11: disconnected by user 
+Oct  6 13:57:59 linux-ap8r sshd[4186]: Accepted keyboard-interactive/pam for root from 172.18.1.26 port 35523 ssh2 
+Oct  6 13:57:51 linux-ap8r sshd[4185]: Server listening on :: port 22. 
+Oct  6 13:57:51 linux-ap8r sshd[4185]: Server listening on 0.0.0.0 port 22. 
+Oct  6 13:33:11 linux-ap8r SuSEfirewall2: Firewall rules successfully set 
+Oct  6 13:33:11 linux-ap8r SuSEfirewall2: batch committing... 
+Oct  6 13:33:11 linux-ap8r SuSEfirewall2: Setting up rules from /etc/sysconfig/SuSEfirewall2 ... 
