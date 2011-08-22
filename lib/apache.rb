@@ -131,7 +131,7 @@ class Apache<Syslog
 
   def apache_access_log(source="::1",date=Time.now,ua="random",referrer="",request="GET /",status_code="200",size="-",user="-")
     
-  puts("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H/%M/%S %z")}] \"#{request}\" #{status_code} #{size} \"#{referer}\" \"#{self.user_agent(ua)}\"")
+  log("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H/%M/%S %z")}] \"#{request}\" #{status_code} #{size} \"#{referer}\" \"#{self.user_agent(ua)}\"")
    
   end
   
@@ -141,7 +141,7 @@ class Apache<Syslog
   end
   
   def apache_error(date=Time.now,level="error",client="127.0.0.1",message="File does not exist: /imagez")
-    puts("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}")
+    log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}")
     
   end
 end

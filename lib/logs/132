@@ -1,6 +1,0 @@
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00519: Admin user "netscreen" logged in for Web(http) management (port 80) from 172.18.1.26:56179 (2010-10-11 15:27:39)
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00519: Admin user "netscreen" logged in for Web(http) management (port 80) from 172.18.1.26:43107 (2010-10-07 17:15:27)
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00519: Admin user "netscreen" logged in for Web(http) management (port 80) from 172.18.1.13:1066 (2010-10-07 17:06:25)
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00518: Admin user "netscreen" login attempt for Web(http) management (port 80) from 172.18.1.13:1066 failed. (2010-10-07 17:06:19)
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00518: Admin user "netscreen" login attempt for Web(http) management (port 80) from 172.18.1.13:1066 failed. (2010-10-07 17:06:14)
-ns5xt: NetScreen device_id=ns5xt  [Root]system-warning-00518: Admin user "netscreen" login attempt for Web(http) management (port 80) from 172.18.1.13:1066 failed. (2010-10-07 17:06:09)

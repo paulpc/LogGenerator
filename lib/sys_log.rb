@@ -19,7 +19,7 @@ module Sources
     def syslog_log(date=nil, program=nil, message=nil)
     #Jul 31 23:46:16 linux-s55c /usr/sbin/cron[1937]: (CRON) bad username (/etc/cron.d/smolt)
     # log("#{date.strdtime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}")
-    puts "#{date.strftime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}"
+    log "#{date.strftime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}"
   end
   
   def boot()

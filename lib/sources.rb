@@ -1,7 +1,7 @@
 require_relative 'sys_log.rb'
-
+require_relative 'log.rb'
 module Sources
-
+include Log
 class BluecoatSG
   def initialize(host,ip)
     @host=host || "BklueCoatProxy_"+rand(999999).to_s.rjust(6,"0")      
