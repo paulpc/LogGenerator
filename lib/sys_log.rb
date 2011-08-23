@@ -4,12 +4,17 @@
 module Sources
      class Syslog
        attr_accessor :tty, :shadow
-       def initialize(host=nil,ip=nil)
+       def initialize(host=nil)
          #generating a random hostname for this computer if the hostname is not already there
         @host=host || "agency_linux_"+rand(999999).to_s.rjust(6,"0")    
         #make sure to check this IP and see that it is not already taken
-        @ip=ip || "192.168.4."+(1+rand(253)).to_s
+        if $firewall
+         @ip= $firewall.assign("DMZ")
+        else
+        @ip = "192.168.4."+(1+rand(253)).to_s
+        end
         hex_ip=[]
+        @mac=rand(280533990614619).to_s(16).rjust(12,"0")
         @ip.split(".").each {|octet| hex_ip+=[octet.to_i.to_s(16).rjust(2,"0")]}
         @ip_v6="fe80::221:9bff:#{hex_ip[0]+hex_ip[1]}:#{hex_ip[2]+hex_ip[3]}"
         @tty=rand(9)+1
@@ -17,7 +22,6 @@ module Sources
     end
     
     def syslog_log(date=nil, program=nil, message=nil)
-    #Jul 31 23:46:16 linux-s55c /usr/sbin/cron[1937]: (CRON) bad username (/etc/cron.d/smolt)
     # log("#{date.strdtime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}")
     log "#{date.strftime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}"
   end
@@ -73,7 +77,7 @@ cookie=rand(2885934096)
    messages.each {|process|
      proc_name=process.delete_at(0)
      process.each {|message|
-       syslog_log(Time.now,proc_name,message)
+       syslog_log(get_time(),proc_name,message)
      }
      sleep(rand(3))
    }
@@ -109,7 +113,7 @@ cookie=rand(2885934096)
     messages.each {|process|
      proc_name=process.delete_at(0)
      process.each {|message|
-       syslog_log(Time.now,proc_name,message)
+       syslog_log(get_time(),proc_name,message)
      }
      sleep(rand(3))
    }
@@ -140,7 +144,7 @@ cookie=rand(2885934096)
       when "disconnect"
         mesages=["Received disconnect from #{source}: 11: disconnected by user"]
       end
-                messages.each {|message| syslog_log(Time.now,"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
+                messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
       
     end
     
@@ -160,7 +164,7 @@ cookie=rand(2885934096)
       when "failure"
         messages=["     #{user} : 3 incorrect password attempts ; TTY=pts/#{@tty} ; PWD=/home/#{user} ; USER=#{target} ; COMMAND=#{comm_path}"]
       end
-    messages.each {|message| syslog_log(Time.now,__method__,message)} unless messages.to_a.empty?
+    messages.each {|message| syslog_log(get_time(),__method__,message)} unless messages.to_a.empty?
     if self.respond_to?(comm_only) and status == "success"
       self.send(comm_only.to_sym, status, arguments.join(" "),user, target)
     end
@@ -173,7 +177,7 @@ cookie=rand(2885934096)
     when "success"
         messages=["(to #{target}) #{user} on /dev/pts/#{@tty}"]
     end
-    messages.each {|message| syslog_log(Time.now,__method__,message)} unless  messages.to_a.empty? 
+    messages.each {|message| syslog_log(get_time(),__method__,message)} unless  messages.to_a.empty? 
     end
     
     def crontab(status="success",command="-l",user="test",target="root")
@@ -184,7 +188,7 @@ cookie=rand(2885934096)
       when "-e"
         messages=["(#{target}) BEGIN EDIT (#{target})","(#{target}) REPLACE (#{target})","(#{target}) END EDIT (#{target})"]
       end
-          messages.each {|message| syslog_log(Time.now,"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
+          messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
     end
        
     def useradd(account="test",gid="33",user="0")
@@ -195,14 +199,14 @@ cookie=rand(2885934096)
       "running USERADD_CMD command - script=/usr/sbin/useradd.local, account=#{account}, uid=#{uid}, gid=#{gid}, home=/home/#{account}, by=#{user}"
       ]
       @shadow[account]={:gid=>gid, :uid=>uid}
-    messages.each {|message| syslog_log(Time.now,"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
+    messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
     end
     
     def usermod(account="test",gid="100",user="0")
       pid=10000+rand(10000)
       messages=["default group changed - account=#{account}, uid=#{@shadow[account][:uid]}, gid=#{gid}, old gid=#{@shadow[account][:gid]}, by=#{user}"]  
      @shadow[account][:gid]=gid
-     messages.each {|message| syslog_log(Time.now,"shadow[#{pid}]",message)} unless messages.to_a.empty?  
+     messages.each {|message| syslog_log(get_time(),"shadow[#{pid}]",message)} unless messages.to_a.empty?  
     end
     
     def userdel(account="test",user="0")
@@ -216,7 +220,7 @@ cookie=rand(2885934096)
         ["shadow[#{pid}]","account deleted - account=#{account}, uid=#{@shadow[account][:uid]}}, by=#{user}"],
         ["shadow[#{pid}]","running USERDEL_POSTCMD command - script=/usr/sbin/userdel-post.local, account=#{account}, uid=#{@shadow[account][:uid]}}, gid=#{@shadow[account][:gid]}}, home=/home/#{account}, by=#{user}"]
         ]
-             messages.each {|program,message| syslog_log(Time.now,program,message)} unless messages.to_a.empty?  
+             messages.each {|program,message| syslog_log(get_time(),program,message)} unless messages.to_a.empty?  
     end
     
     def passwd(account="test",user=nil)
@@ -230,12 +234,12 @@ cookie=rand(2885934096)
       else
         messages=["gkr-pam: couldn't change password for the login keyring.","password changed - account=#{account}, uid=#{@shadow[account][:uid]}, by=#{@shadow[account][:uid]}"]
       end    
-      messages.each {|message| syslog_log(Time.now,"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
+      messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
     end
     
     def mark()
       #Jul 15 21:05:59 linux-s55c rsyslogd: -- MARK --
-      syslog_log(Time.now,host,"rsyslogd"," -- MARK --")
+      syslog_log(get_time(),host,"rsyslogd"," -- MARK --")
     end
     
      end
