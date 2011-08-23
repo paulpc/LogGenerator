@@ -1,3 +1,5 @@
 == LogGenerator
 
-You should document your project here.
+This projects attempts to create a small log generator that will eventually take a scenario file
+as well as the network parameters (zones, ip ranges, type of servers) and will spit out log traffic
+for a log analysis appliance

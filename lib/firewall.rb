@@ -168,13 +168,6 @@ module Sources
     
     end
     
-    def log_admin
-      
-    end
-    
-    def log_dhcp
-      
-    end
   private :get_zone, :analize_traffic, :next_session_id  
   end
   
