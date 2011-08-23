@@ -1,0 +1,32 @@
+--- 
+users: 
+- tobacco
+- proxy
+- warez
+- virusinfected
+- weapons
+- games
+- adult
+- onlineauctions
+- gambling
+- porn
+- malware
+- drugs
+- sexuality
+- mixed_adult
+- hacking
+- onlinegames
+- phishing
+- spyware
+infosec:
+- tobacco
+- weapons
+- games
+- adult
+- onlineauctions
+- gambling
+- porn
+- drugs
+- sexuality
+- mixed_adult
+- onlinegames

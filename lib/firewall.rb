@@ -1,5 +1,3 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
 require_relative 'ip_conversion.rb'
 
 module Sources
@@ -9,33 +7,25 @@ module Sources
     def initialize(host=nil,ip=nil)
       @assigned_ips=Hash.new
       @session_id=18731
-    @zones = {"firewalls"=>"192.168.1.0/28","web_servers"=>"212.118.247.0/27", "mail_servers"=>"212.118.246.232/29", "Trust"=>"192.168.8.1/23", 
-      "DMZ"=>"212.118.247.32/27", "ftp_servers"=>"212.118.246.240/28", "localhost"=>"127.0.0.0/8", "public_gateway"=>"212.118.246.224/29", "database_servers"=>"192.168.50.1/25"}
-    # unknown zones will default to Untrust
-    #  let's pretend to be this zone: 
-    #  212.118.246.224 - 212.118.247.255
-      @rule_set=[
-           [1, ["Untrust","Trust"],["web_servers"],["http","https"]], 
-           [2, ["Untrust","Trust"],["mail_servers"],["smtp","pop3","imap"]], 
-           [3, ["Untrust","Trust"],["ftp_servers"],["ftp"]],
-           [4, ["Trust"],["web_servers","database_servers","DMZ","ftp_servers","mail_servers"],["ssh","icmp"]],
-           [5, ["Trust"],["firewalls"],["ssh","https"]],
-           [6, ["web_servers"],["database_servers"],["mysql","oracle"]],
-           [7,["Trust"],["Untrust"],["https","http"]]
-        ]      
+      #reading the zones and the rules out of the yaml files. The unknown ips will default to the Untrust zone
+      @zones = {}
+      File.open( './config/firewall_zones.yml' ) { |yf| @zones=YAML::load( yf ) }
+      @rule_set = {}
+      File.open( './config/firewall_rules.yml' ) { |yf| @rule_set=YAML::load( yf ) }
+              
       @nat_zones=["Trust","database_servers"]
       
       @services={}
       #creating a list of services - using the nmap list
-    File.open("nmap-services.txt","r").each {|line|
-      if line !~ /^[\s\t]*#/
-        serv_components=line.split(/\t/)        
-        port,protocol=serv_components[1].split(/\//)
-         serv_components[0]="#{protocol}/port:#{port}" if serv_components[0]=="unknown"
-        @services[serv_components[0]]={} unless @services[serv_components[0]]
-        @services[serv_components[0]][protocol]=port
-      end
-       }
+      File.open("./config/nmap-services.txt","r").each {|line|
+        if line !~ /^[\s\t]*#/
+          serv_components=line.split(/\t/)        
+          port,protocol=serv_components[1].split(/\//)
+          serv_components[0]="#{protocol}/port:#{port}" if serv_components[0]=="unknown"
+          @services[serv_components[0]]={} unless @services[serv_components[0]]
+          @services[serv_components[0]][protocol]=port
+        end
+      }
         
       @internal_ip=assign("firewalls")
       @ip=assign("public_gateway")
@@ -44,18 +34,26 @@ module Sources
     end
     
     # generate traffic white noise to confuse participants and to mimic the background noise of the interwebs   
+    # pick a public facing IP and generate random traffic at it from the internets at large
     def white_noise
-          
+      while 1>0
+        rnd_zone = (@zones.keys-@nat_zones-["localhost"]).sample
+        destination=assign(rnd_zone,true)
+        source=rand_ip()
+        service=@services.keys.sample
+        traffic(source,destination,service)
+        sleep 1
+      end
     end
     
     # simulate an admin login - either successful or unsuccessful
     def admin_login(source,status,user='netscreen')
-    case status
-    when "success"
-      fw_log(519,"Admin user \"#{user}\" logged in for Web(http) management (port 80) from #{source}:#{rand(50000)+1752} (#{get_time().strftime("%Y-%m-%d %H:%M:%S")})")
-    when "failure"
-      fw_log(518,"Admin user \"#{user}\" login attempt for Web(http) management (port 80) from #{source}:#{rand(50000)+1752} failed. (#{get_time().strftime("%Y-%m-%d %H:%M:%S")})")
-    end
+      case status
+      when "success"
+        fw_log(519,"Admin user \"#{user}\" logged in for Web(http) management (port 80) from #{source}:#{rand(50000)+1752} (#{get_time().strftime("%Y-%m-%d %H:%M:%S")})")
+      when "failure"
+        fw_log(518,"Admin user \"#{user}\" login attempt for Web(http) management (port 80) from #{source}:#{rand(50000)+1752} failed. (#{get_time().strftime("%Y-%m-%d %H:%M:%S")})")
+      end
     end
     
     # simulate a change of firewall rules 
@@ -71,16 +69,20 @@ module Sources
     end
     
     # assign an ip to the computers in the fw_zone by request
-    def assign(fw_zone)
+    def assign(fw_zone, random=nil)
       @assigned_ips[fw_zone]=Array.new unless @assigned_ips[fw_zone]
       start_ip,cidr=@zones[fw_zone].split("/")
       start_int=(to_hex(start_ip).to_i(16))+1
       end_int=(start_int+2**(32-cidr.to_i))-1
       a_ip=nil
-      start_int.upto(end_int) {|int_ip|
-        ip=to_ip(int_ip.to_s(16))
-        a_ip = ip unless @assigned_ips[fw_zone].include?(ip) or a_ip
-      }      
+      unless random
+        start_int.upto(end_int) {|int_ip|
+          ip=to_ip(int_ip.to_s(16))
+          a_ip = ip unless @assigned_ips[fw_zone].include?(ip) or a_ip
+        }      
+      else
+        a_ip=to_ip((start_int+rand(end_int-start_int)).to_s(16))
+      end
       if a_ip
         @assigned_ips[fw_zone].push(a_ip)
         return a_ip
@@ -92,9 +94,9 @@ module Sources
     
     # keep track of the firewall sessions in order to have sequential numbers for the events
     def next_session_id()
-    @session_id+=1
-    @session_id=2184 if @session_id >120000
-    return @session_id
+      @session_id+=1
+      @session_id=2184 if @session_id >120000
+      return @session_id
     end
     
     
@@ -121,7 +123,7 @@ module Sources
 
     
     def fw_log(type,message)
-     case type
+      case type
       when 257
         message_type="[Root]system-notification-00257(traffic)"  
       when 518..519
@@ -160,15 +162,15 @@ module Sources
         xdest=destination
       end
       
-        if flow[:polid] == 99
-          fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=0 policy_id=#{flow[:polid]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{rand(128)} rcvd=#{rand(128)} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} session_id=#{next_session_id}")
-        else
-          fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=#{rand(10)} policy_id=#{flow[:pol_id]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{bytes} rcvd=#{bytes} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} src-xlated ip=#{xsrc} port=#{src_port} dst-xlated ip=#{xdest} port=#{@services[service].values.first} session_id=#{next_session_id}")
-        end
+      if flow[:polid] == 99
+        fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=0 policy_id=#{flow[:polid]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{rand(128)} rcvd=#{rand(128)} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} session_id=#{next_session_id}")
+      else
+        fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=#{rand(10)} policy_id=#{flow[:polid]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{bytes} rcvd=#{bytes} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} src-xlated ip=#{xsrc} port=#{src_port} dst-xlated ip=#{xdest} port=#{@services[service].values.first} session_id=#{next_session_id}")
+      end
     
     end
     
-  private :get_zone, :analize_traffic, :next_session_id  
+    private :get_zone, :analize_traffic, :next_session_id  
   end
   
 end

@@ -1,0 +1,67 @@
+## YAML Template.
+---
+Aulus:
+ - webmaster
+ - user
+Appius:
+  - user
+Decimus:
+ - sys_admin
+ - bc_admin
+ - user
+Gaius:
+  - dba
+  - user
+Gnaeus:
+  - infosec
+  - user
+Kaeso:
+  - user
+  - accounting
+Lucius:
+  - user
+Manius:
+  - user
+Marcus:
+  - user
+Numerius:
+  - infosec
+  - user  
+Publius:
+  - mail_admin
+  - user  
+Quintus:
+  - user
+Servius:
+  - user
+Sextus:
+  - user
+  - mail_admin
+Spurius:
+  - user
+Tiberius:
+  - user
+  - management
+Titus:
+  - user
+  - hr
+Vibius:
+  - user
+  - accounting
+Cornelius:
+  - dba
+  - user
+Julius:
+  - user
+  - management
+Sulla:
+  - ws_admin
+  - user
+Scipio:
+  - sys_admin
+  - user
+Felix:
+  - ws_admin
+  - user
+Aemilius:
+  - user

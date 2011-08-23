@@ -1,0 +1,43 @@
+--- 
+- - 1
+  - - Untrust
+    - Trust
+  - - web_servers
+  - - http
+    - https
+- - 2
+  - - Untrust
+    - Trust
+  - - mail_servers
+  - - smtp
+    - pop3
+    - imap
+- - 3
+  - - Untrust
+    - Trust
+  - - ftp_servers
+  - - ftp
+- - 4
+  - - Trust
+  - - web_servers
+    - database_servers
+    - DMZ
+    - ftp_servers
+    - mail_servers
+  - - ssh
+    - icmp
+- - 5
+  - - Trust
+  - - firewalls
+  - - ssh
+    - https
+- - 6
+  - - web_servers
+  - - database_servers
+  - - mysql
+    - oracle
+- - 7
+  - - Trust
+  - - Untrust
+  - - https
+    - http
