@@ -1,0 +1,316 @@
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.2 has been assigned to Trust (2011-10-17 08:00:00)
+Oct 17 08:00:00 192.168.8.2 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_828583 User=Aulus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=469        TimeGenerated=1318856400        TimeWritten=1318856400  Message=Successful Logon:   User Name: Aulus   Domain:  mystery_agency   Logon ID:  (0x0,0x4b9cb)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_828583   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.3 has been assigned to Trust (2011-10-17 08:00:02)
+Oct 17 08:00:02 192.168.8.3 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_826517 User=Appius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=672        TimeGenerated=1318856402        TimeWritten=1318856402  Message=Successful Logon:   User Name: Appius   Domain:  mystery_agency   Logon ID:  (0x0,0xb3e94)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_826517   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.4 has been assigned to Trust (2011-10-17 08:00:03)
+Oct 17 08:00:03 192.168.8.4 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_000035 User=Decimus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=647        TimeGenerated=1318856403        TimeWritten=1318856403  Message=Successful Logon:   User Name: Decimus   Domain:  mystery_agency   Logon ID:  (0x0,0x3c8d6)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_000035   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.5 has been assigned to Trust (2011-10-17 08:00:06)
+Oct 17 08:00:06 192.168.8.5 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_627055 User=Gaius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=384        TimeGenerated=1318856406        TimeWritten=1318856406  Message=Successful Logon:   User Name: Gaius   Domain:  mystery_agency   Logon ID:  (0x0,0x31f95)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_627055   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.6 has been assigned to Trust (2011-10-17 08:00:09)
+Oct 17 08:00:09 192.168.8.6 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_007612 User=Gnaeus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=541        TimeGenerated=1318856409        TimeWritten=1318856409  Message=Successful Logon:   User Name: Gnaeus   Domain:  mystery_agency   Logon ID:  (0x0,0xe38ab)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_007612   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.7 has been assigned to Trust (2011-10-17 08:00:11)
+Oct 17 08:00:11 192.168.8.7 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_805891 User=Kaeso Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=478        TimeGenerated=1318856411        TimeWritten=1318856411  Message=Successful Logon:   User Name: Kaeso   Domain:  mystery_agency   Logon ID:  (0x0,0x3dc13)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_805891   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.8 has been assigned to Trust (2011-10-17 08:00:11)
+Oct 17 08:00:11 192.168.8.8 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_588412 User=Lucius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=670        TimeGenerated=1318856411        TimeWritten=1318856411  Message=Successful Logon:   User Name: Lucius   Domain:  mystery_agency   Logon ID:  (0x0,0xd52e1)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_588412   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.9 has been assigned to Trust (2011-10-17 08:00:13)
+Oct 17 08:00:13 192.168.8.9 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_783903 User=Manius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1174        TimeGenerated=1318856413        TimeWritten=1318856413  Message=Successful Logon:   User Name: Manius   Domain:  mystery_agency   Logon ID:  (0x0,0x4a11d)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_783903   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.10 has been assigned to Trust (2011-10-17 08:00:13)
+Oct 17 08:00:13 192.168.8.10 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_505318 User=Marcus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=568        TimeGenerated=1318856413        TimeWritten=1318856413  Message=Successful Logon:   User Name: Marcus   Domain:  mystery_agency   Logon ID:  (0x0,0xc979b)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_505318   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.11 has been assigned to Trust (2011-10-17 08:00:15)
+Oct 17 08:00:15 192.168.8.11 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_083345 User=Numerius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=552        TimeGenerated=1318856415        TimeWritten=1318856415  Message=Successful Logon:   User Name: Numerius   Domain:  mystery_agency   Logon ID:  (0x0,0xa6c8b)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_083345   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.12 has been assigned to Trust (2011-10-17 08:00:17)
+Oct 17 08:00:17 192.168.8.12 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_821295 User=Publius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=431        TimeGenerated=1318856417        TimeWritten=1318856417  Message=Successful Logon:   User Name: Publius   Domain:  mystery_agency   Logon ID:  (0x0,0xe0ea9)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_821295   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.13 has been assigned to Trust (2011-10-17 08:00:17)
+Oct 17 08:00:17 192.168.8.13 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_115960 User=Quintus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1004        TimeGenerated=1318856417        TimeWritten=1318856417  Message=Successful Logon:   User Name: Quintus   Domain:  mystery_agency   Logon ID:  (0x0,0x4bb34)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_115960   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.14 has been assigned to Trust (2011-10-17 08:00:17)
+Oct 17 08:00:17 192.168.8.14 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_585566 User=Servius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1221        TimeGenerated=1318856417        TimeWritten=1318856417  Message=Successful Logon:   User Name: Servius   Domain:  mystery_agency   Logon ID:  (0x0,0x3457f)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_585566   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.15 has been assigned to Trust (2011-10-17 08:00:18)
+Oct 17 08:00:18 192.168.8.15 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_641758 User=Sextus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=572        TimeGenerated=1318856418        TimeWritten=1318856418  Message=Successful Logon:   User Name: Sextus   Domain:  mystery_agency   Logon ID:  (0x0,0x730eb)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_641758   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.16 has been assigned to Trust (2011-10-17 08:00:19)
+Oct 17 08:00:19 192.168.8.16 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_417456 User=Spurius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1067        TimeGenerated=1318856419        TimeWritten=1318856419  Message=Successful Logon:   User Name: Spurius   Domain:  mystery_agency   Logon ID:  (0x0,0xeb7e7)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_417456   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.17 has been assigned to Trust (2011-10-17 08:00:21)
+Oct 17 08:00:21 192.168.8.17 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_342480 User=Tiberius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=886        TimeGenerated=1318856421        TimeWritten=1318856421  Message=Successful Logon:   User Name: Tiberius   Domain:  mystery_agency   Logon ID:  (0x0,0x890c8)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_342480   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.18 has been assigned to Trust (2011-10-17 08:00:22)
+Oct 17 08:00:22 192.168.8.18 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_358172 User=Titus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=318        TimeGenerated=1318856422        TimeWritten=1318856422  Message=Successful Logon:   User Name: Titus   Domain:  mystery_agency   Logon ID:  (0x0,0x798e1)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_358172   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.19 has been assigned to Trust (2011-10-17 08:00:23)
+Oct 17 08:00:23 192.168.8.19 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_554775 User=Vibius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=844        TimeGenerated=1318856423        TimeWritten=1318856423  Message=Successful Logon:   User Name: Vibius   Domain:  mystery_agency   Logon ID:  (0x0,0x925c0)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_554775   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.20 has been assigned to Trust (2011-10-17 08:00:24)
+Oct 17 08:00:24 192.168.8.20 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_930051 User=Cornelius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=635        TimeGenerated=1318856424        TimeWritten=1318856424  Message=Successful Logon:   User Name: Cornelius   Domain:  mystery_agency   Logon ID:  (0x0,0x4e2e8)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_930051   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.21 has been assigned to Trust (2011-10-17 08:00:24)
+Oct 17 08:00:24 192.168.8.21 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_526245 User=Julius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=429        TimeGenerated=1318856424        TimeWritten=1318856424  Message=Successful Logon:   User Name: Julius   Domain:  mystery_agency   Logon ID:  (0x0,0x1f7c3)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_526245   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.22 has been assigned to Trust (2011-10-17 08:00:25)
+Oct 17 08:00:25 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_823285 User=Sulla Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=409        TimeGenerated=1318856425        TimeWritten=1318856425  Message=Successful Logon:   User Name: Sulla   Domain:  mystery_agency   Logon ID:  (0x0,0x510ab)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_823285   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.23 has been assigned to Trust (2011-10-17 08:00:28)
+Oct 17 08:00:28 192.168.8.23 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_343752 User=Scipio Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=390        TimeGenerated=1318856428        TimeWritten=1318856428  Message=Successful Logon:   User Name: Scipio   Domain:  mystery_agency   Logon ID:  (0x0,0x21c73)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_343752   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.24 has been assigned to Trust (2011-10-17 08:00:29)
+Oct 17 08:00:29 192.168.8.24 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_566386 User=Felix Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1017        TimeGenerated=1318856429        TimeWritten=1318856429  Message=Successful Logon:   User Name: Felix   Domain:  mystery_agency   Logon ID:  (0x0,0x452e)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_566386   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-information-00527: IP address 192.168.8.25 has been assigned to Trust (2011-10-17 08:00:30)
+Oct 17 08:00:30 192.168.8.25 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_958140 User=Aemilius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=992        TimeGenerated=1318856430        TimeWritten=1318856430  Message=Successful Logon:   User Name: Aemilius   Domain:  mystery_agency   Logon ID:  (0x0,0xda145)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_958140   Logon GUID: {00000000-0000-0000-0000-000000000000}
+Oct 17 08:01:00 security_srv kernel: imklog 5.6.5, log source = /proc/kmsg started.
+Oct 17 08:01:02 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="920" x-info="http://www.rsyslog.com"] start
+Oct 17 08:01:04 security_srv kernel:  [   12.937508] microcode: CPU0 sig=0x6fd, pf=0x1, revision=0xa3
+Oct 17 08:01:04 security_srv kernel:  [   12.984751] microcode: CPU1 sig=0x6fd, pf=0x1, revision=0xa3
+Oct 17 08:01:04 security_srv kernel: [   12.986559] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+Oct 17 08:01:04 security_srv kernel: [   13.275330] microcode: CPU0 updated to revision 0xa4, date = 2010-10-02
+Oct 17 08:01:04 security_srv kernel: [   13.275706] microcode: CPU1 updated to revision 0xa4, date = 2010-10-02
+Oct 17 08:01:04 security_srv kernel:  [   13.605884] ip6_tables: (C) 2000-2006 Netfilter Core Team
+Oct 17 08:01:04 security_srv kernel: [   13.838693] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+Oct 17 08:01:04 security_srv kernel: [   13.876714] ip_tables: (C) 2000-2006 Netfilter Core Team
+Oct 17 08:01:04 security_srv polkitd[1049]: started daemon version 0.99 using authority implementation `local' version `0.99'
+Oct 17 08:01:05 security_srv SuSEfirewall2: Firewall rules set to CLOSE
+Oct 17 08:01:07 security_srv ifup: lo
+Oct 17 08:01:07 security_srv ifup: lo
+Oct 17 08:01:07 security_srv ifup: IP address: 127.0.0.1/8
+Oct 17 08:01:07 security_srv ifup:  
+Oct 17 08:01:07 security_srv ifup:  
+Oct 17 08:01:07 security_srv ifup: IP address: 127.0.0.2/8  
+Oct 17 08:01:07 security_srv ifup: eth0      device: Intel Corporation 82566DM-2 Gigabit Network Connection (rev 02)
+Oct 17 08:01:08 security_srv  kernel: [   16.121283] e1000e 0000:00:19.0: irq 41 for MSI/MSI-X
+Oct 17 08:01:08 security_srv  kernel: [   16.172075] e1000e 0000:00:19.0: irq 41 for MSI/MSI-X
+Oct 17 08:01:08 security_srv  kernel: [   16.172553] ADDRCONF(NETDEV_UP): eth0: link is not ready
+Oct 17 08:01:10 security_srv ifup:    eth0    
+Oct 17 08:01:10 security_srv ifup: IP address: 212.118.247.34/28
+Oct 17 08:01:10 security_srv ifup:  
+Oct 17 08:01:10 security_srv SuSEfirewall2: /var/lock/SuSEfirewall2.booting exists which means system boot in progress, exit.
+Oct 17 08:01:10 security_srv kernel: Kernel logging (proc) stopped.
+Oct 17 08:01:10 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="920" x-info="http://www.rsyslog.com"] exiting on signal 15.
+Oct 17 08:01:11 security_srv kernel: imklog 5.6.5, log source = /proc/kmsg started
+Oct 17 08:01:12 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="1564" x-info="http://www.rsyslog.com"] start
+Oct 17 08:01:14 security_srv auditd[1600]: Started dispatcher: /sbin/audispd pid: 1602
+Oct 17 08:01:14 security_srv audispd: priority_boost_parser called with: 4
+Oct 17 08:01:14 security_srv audispd: audispd: max_restarts_parser called with: 10
+Oct 17 08:01:14 security_srv audispd: No plugins found, exiting
+Oct 17 08:01:14 security_srv auditd[1600]: Init complete, auditd 2.0.5 listening for events (startup state disable)
+Oct 17 08:01:15 security_srv sm-notify[1618]: Version 1.2.3 starting
+Oct 17 08:01:16 security_srv sshd[1649]: Server listening on 0.0.0.0 port 22
+Oct 17 08:01:16 security_srv sshd[1649]: Server listening on :: port 22
+Oct 17 08:01:16 security_srv kernel: [   17.578874] e1000e: eth0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: RX/TX
+Oct 17 08:01:16 security_srv kernel: [   17.578878] e1000e 0000:00:19.0: eth0: 10/100 speed: disabling TSO
+Oct 17 08:01:16 security_srv kernel:  [  17.579312] ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Oct 17 08:01:16 security_srv kernel: [   18.360923] BIOS EDD facility v0.16 2004-Jun-25, 1 devices found
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Found user #'avahi' (UID 104) and group 'avahi' (GID 106).
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Successfully dropped root privileges.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: avahi-daemon 0.6.28 starting up.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/sftp-ssh.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/ssh.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/udisks.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Joining mDNS multicast group on interface eth0.IPv4 with address 212.118.247.34.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: New relevant interface eth0.IPv4 for mDNS.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Network interface enumeration completed.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering new address record for fe80::221:9bff:d476:f722 on eth0.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering new address record for 212.118.247.34 on eth0.IPv4.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering HINFO record with values #'X86_64'/'LINUX'.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Server startup complete. Host name is security_srv.local. Local service cookie is 1475797081.
+Oct 17 08:01:19 security_srv acpid: 1 client rule loaded
+Oct 17 08:01:20 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/udisks.service) successfully established.
+Oct 17 08:01:20 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/ssh.service) successfully established.
+Oct 17 08:01:20 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/sftp-ssh.service) successfully established.
+Oct 17 08:01:20 security_srv ntpd[2110]: ntpd 4.2.6p3@1.2290 Tue Jun  7 03:07:00 UTC 2011 (1)
+Oct 17 08:01:20 security_srv ntpd[2110]: proto: precision = 0.116 usec
+Oct 17 08:01:20 security_srv ntpd[2110]: ntp_io: estimated max descriptors: 1024, initial socket boundary: 16
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen and drop on 0 v4wildcard 0.0.0.0 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen and drop on 1 v6wildcard :: UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen normally on 2 lo 127.0.0.1 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen normally on 3 lo 127.0.0.2 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen normally on 4 eth0 212.118.247.34 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen normally on 5 eth0 fe80::221:9bff:d476:f722 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: Listen normally on 6 lo ::1 UDP 123
+Oct 17 08:01:20 security_srv ntpd[2110]: peers refreshed
+Oct 17 08:01:20 security_srv acpid: 1 client rule loaded
+Oct 17 08:01:21 security_srv sssd: Starting up
+Oct 17 08:01:23 security_srv sssd[be[default]]: Starting up
+Oct 17 08:01:25 security_srv sssd[pam]: Starting up
+Oct 17 08:01:25 security_srv sssd[nss]: Starting up
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) STARTUP (1.4.7)
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) bad username (/etc/cron.d/smolt)
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) INFO (running with inotify support)
+Oct 17 08:01:27 security_srv smartd[2308]: smartd 5.40 2010-10-16 r3189 [x86_64-unknown-linux-gnu] (SUSE RPM)#012Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net#012
+Oct 17 08:01:27 security_srv smartd[2308]: Opened configuration file /etc/smartd.conf
+Oct 17 08:01:27 security_srv smartd[2308]: Drive: DEVICESCAN, implied #'-a' Directive on line 26 of file /etc/smartd.conf
+Oct 17 08:01:27 security_srv smartd[2308]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda, type changed from #'scsi' to 'sat'
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda [SAT], opened
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda [SAT], found in smartd database.
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda [SAT], is SMART capable. Adding to "monitor" list.
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda [SAT], state read from /var/lib/smartmontools/smartd.WDC_WD800JD_75MSA3-WD_WMAM9CZT2081.ata.state
+Oct 17 08:01:27 security_srv smartd[2308]:  Monitoring 1 ATA and 0 SCSI devices
+Oct 17 08:01:27 security_srv smartd[2308]: Device: /dev/sda [SAT], state written to /var/lib/smartmontools/smartd.WDC_WD800JD_75MSA3-WD_WMAM9CZT2081.ata.state
+Oct 17 08:01:27 security_srv smartd[2308]: smartd has fork()ed into background mode. New PID=2325
+Oct 17 08:01:29 security_srv SuSEfirewall2: Setting up rules from /etc/sysconfig/SuSEfirewall2 ...
+Oct 17 08:01:29 security_srv SuSEfirewall2: SuSEfirewall2: Firewall rules successfully set
+Oct 17 08:01:30 security_srv kernel: [   27.447566] bootsplash: status on console 0 changed to on
+Oct 17 08:01:30 security_srv kernel: [   27.714004] eth0: no IPv6 routers present
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully called chroot.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully dropped privileges
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully limited resources.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Running.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Canary thread running.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Watchdog thread running.
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-notification-00257(traffic): start_time="2011-10-17 08:01:32" duration=7 policy_id=4 service=ssh proto=6 src zone=Trust dst zone=DMZ action=Permit sent=265 rcvd=265 src=192.168.8.5 dst=212.118.247.34 src_port=53486 dst_port=22 src-xlated ip=192.168.8.5 port=53486 dst-xlated ip=212.118.247.34 port=22 session_id=18732
+Oct 17 08:01:32 security_srv sshd[10917]: Accepted keyboard-interactive/pam for Gaius from 192.168.8.5 port 40632 ssh2
+Oct 17 08:01:32 security_srv useradd[12483]: new account added - account=haxx, uid=31220, gid=0, home=/home/haxx, shell=/bin/bash, by=0
+Oct 17 08:01:32 security_srv useradd[12483]: account added to group - account=test, group=users, gid=100, by=0
+Oct 17 08:01:32 security_srv useradd[12483]: running USERADD_CMD command - script=/usr/sbin/useradd.local, account=haxx, uid=31220, gid=0, home=/home/haxx, by=0
+ns5xt_514877: NetScreen device_id=ns5xt_514877  [Root]system-notification-00257(traffic): start_time="2011-10-17 08:01:32" duration=7 policy_id=4 service=ssh proto=6 src zone=Trust dst zone=web_servers action=Permit sent=1700 rcvd=1700 src=192.168.8.5 dst=212.118.247.1 src_port=26586 dst_port=22 src-xlated ip=192.168.8.5 port=26586 dst-xlated ip=212.118.247.1 port=22 session_id=18733
+Oct 17 08:01:32 web_227165 sshd[11729]: Accepted keyboard-interactive/pam for Gaius from 192.168.8.5 port 40632 ssh2
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_823285 User=Sulla Domain=mystery_agency        EventID=624     EventIDCode=624 EventType=8    EventCategory=7 RecordNumber=517        TimeGenerated=1318856492        TimeWritten=1318856492  Message=User Account Created:   New Account Name: John   New Domain: agency_win_823285   New Account ID: agency_win_823285\John   Caller User Name:  Sulla  Caller Domain: mystery_agency   Caller Logon ID: (0x0,0xe8beb)   Privileges  -  
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.2 has been assigned to Trust (2011-10-17 08:00:00)
+Oct 17 08:00:00 192.168.8.2 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_822708 User=Aulus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=892        TimeGenerated=1318856400        TimeWritten=1318856400  Message=Successful Logon:   User Name: Aulus   Domain:  mystery_agency   Logon ID:  (0x0,0xebf6)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_822708   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.3 has been assigned to Trust (2011-10-17 08:00:02)
+Oct 17 08:00:02 192.168.8.3 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_928647 User=Appius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=300        TimeGenerated=1318856402        TimeWritten=1318856402  Message=Successful Logon:   User Name: Appius   Domain:  mystery_agency   Logon ID:  (0x0,0x8a93f)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_928647   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.4 has been assigned to Trust (2011-10-17 08:00:05)
+Oct 17 08:00:05 192.168.8.4 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_529071 User=Decimus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=580        TimeGenerated=1318856405        TimeWritten=1318856405  Message=Successful Logon:   User Name: Decimus   Domain:  mystery_agency   Logon ID:  (0x0,0x48717)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_529071   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.5 has been assigned to Trust (2011-10-17 08:00:06)
+Oct 17 08:00:06 192.168.8.5 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_009837 User=Gaius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1016        TimeGenerated=1318856406        TimeWritten=1318856406  Message=Successful Logon:   User Name: Gaius   Domain:  mystery_agency   Logon ID:  (0x0,0x3e7b)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_009837   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.6 has been assigned to Trust (2011-10-17 08:00:06)
+Oct 17 08:00:06 192.168.8.6 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_300292 User=Gnaeus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=454        TimeGenerated=1318856406        TimeWritten=1318856406  Message=Successful Logon:   User Name: Gnaeus   Domain:  mystery_agency   Logon ID:  (0x0,0x204de)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_300292   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.7 has been assigned to Trust (2011-10-17 08:00:08)
+Oct 17 08:00:08 192.168.8.7 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_485945 User=Kaeso Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=388        TimeGenerated=1318856408        TimeWritten=1318856408  Message=Successful Logon:   User Name: Kaeso   Domain:  mystery_agency   Logon ID:  (0x0,0xb711c)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_485945   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.8 has been assigned to Trust (2011-10-17 08:00:08)
+Oct 17 08:00:08 192.168.8.8 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_901766 User=Lucius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=586        TimeGenerated=1318856408        TimeWritten=1318856408  Message=Successful Logon:   User Name: Lucius   Domain:  mystery_agency   Logon ID:  (0x0,0xcb7b0)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_901766   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.9 has been assigned to Trust (2011-10-17 08:00:09)
+Oct 17 08:00:09 192.168.8.9 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_630412 User=Manius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=365        TimeGenerated=1318856409        TimeWritten=1318856409  Message=Successful Logon:   User Name: Manius   Domain:  mystery_agency   Logon ID:  (0x0,0x2ee1c)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_630412   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.10 has been assigned to Trust (2011-10-17 08:00:09)
+Oct 17 08:00:09 192.168.8.10 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_631509 User=Marcus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=502        TimeGenerated=1318856409        TimeWritten=1318856409  Message=Successful Logon:   User Name: Marcus   Domain:  mystery_agency   Logon ID:  (0x0,0x3ddf9)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_631509   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.11 has been assigned to Trust (2011-10-17 08:00:11)
+Oct 17 08:00:11 192.168.8.11 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_279949 User=Numerius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1206        TimeGenerated=1318856411        TimeWritten=1318856411  Message=Successful Logon:   User Name: Numerius   Domain:  mystery_agency   Logon ID:  (0x0,0x9284c)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_279949   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.12 has been assigned to Trust (2011-10-17 08:00:14)
+Oct 17 08:00:14 192.168.8.12 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_492054 User=Publius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=360        TimeGenerated=1318856414        TimeWritten=1318856414  Message=Successful Logon:   User Name: Publius   Domain:  mystery_agency   Logon ID:  (0x0,0x68c26)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_492054   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.13 has been assigned to Trust (2011-10-17 08:00:14)
+Oct 17 08:00:14 192.168.8.13 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_752337 User=Quintus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=391        TimeGenerated=1318856414        TimeWritten=1318856414  Message=Successful Logon:   User Name: Quintus   Domain:  mystery_agency   Logon ID:  (0x0,0xbb117)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_752337   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.14 has been assigned to Trust (2011-10-17 08:00:14)
+Oct 17 08:00:14 192.168.8.14 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_521031 User=Servius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=941        TimeGenerated=1318856414        TimeWritten=1318856414  Message=Successful Logon:   User Name: Servius   Domain:  mystery_agency   Logon ID:  (0x0,0xf6452)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_521031   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.15 has been assigned to Trust (2011-10-17 08:00:17)
+Oct 17 08:00:17 192.168.8.15 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_510009 User=Sextus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=853        TimeGenerated=1318856417        TimeWritten=1318856417  Message=Successful Logon:   User Name: Sextus   Domain:  mystery_agency   Logon ID:  (0x0,0xffb5a)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_510009   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.16 has been assigned to Trust (2011-10-17 08:00:19)
+Oct 17 08:00:19 192.168.8.16 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_570373 User=Spurius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1166        TimeGenerated=1318856419        TimeWritten=1318856419  Message=Successful Logon:   User Name: Spurius   Domain:  mystery_agency   Logon ID:  (0x0,0x340f)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_570373   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.17 has been assigned to Trust (2011-10-17 08:00:20)
+Oct 17 08:00:20 192.168.8.17 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_407274 User=Tiberius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=888        TimeGenerated=1318856420        TimeWritten=1318856420  Message=Successful Logon:   User Name: Tiberius   Domain:  mystery_agency   Logon ID:  (0x0,0x688e5)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_407274   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.18 has been assigned to Trust (2011-10-17 08:00:23)
+Oct 17 08:00:23 192.168.8.18 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_276844 User=Titus Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1130        TimeGenerated=1318856423        TimeWritten=1318856423  Message=Successful Logon:   User Name: Titus   Domain:  mystery_agency   Logon ID:  (0x0,0xa2360)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_276844   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.19 has been assigned to Trust (2011-10-17 08:00:23)
+Oct 17 08:00:23 192.168.8.19 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_263796 User=Vibius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1032        TimeGenerated=1318856423        TimeWritten=1318856423  Message=Successful Logon:   User Name: Vibius   Domain:  mystery_agency   Logon ID:  (0x0,0xaf49b)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_263796   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.20 has been assigned to Trust (2011-10-17 08:00:23)
+Oct 17 08:00:23 192.168.8.20 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_466306 User=Cornelius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=791        TimeGenerated=1318856423        TimeWritten=1318856423  Message=Successful Logon:   User Name: Cornelius   Domain:  mystery_agency   Logon ID:  (0x0,0xf3b4c)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_466306   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.21 has been assigned to Trust (2011-10-17 08:00:25)
+Oct 17 08:00:25 192.168.8.21 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_563658 User=Julius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=730        TimeGenerated=1318856425        TimeWritten=1318856425  Message=Successful Logon:   User Name: Julius   Domain:  mystery_agency   Logon ID:  (0x0,0x35340)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_563658   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.22 has been assigned to Trust (2011-10-17 08:00:28)
+Oct 17 08:00:28 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=Sulla Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=1180        TimeGenerated=1318856428        TimeWritten=1318856428  Message=Successful Logon:   User Name: Sulla   Domain:  mystery_agency   Logon ID:  (0x0,0xe42a2)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_091894   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.23 has been assigned to Trust (2011-10-17 08:00:29)
+Oct 17 08:00:29 192.168.8.23 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_686084 User=Scipio Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=804        TimeGenerated=1318856429        TimeWritten=1318856429  Message=Successful Logon:   User Name: Scipio   Domain:  mystery_agency   Logon ID:  (0x0,0x55133)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_686084   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.24 has been assigned to Trust (2011-10-17 08:00:32)
+Oct 17 08:00:32 192.168.8.24 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_477878 User=Felix Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=717        TimeGenerated=1318856432        TimeWritten=1318856432  Message=Successful Logon:   User Name: Felix   Domain:  mystery_agency   Logon ID:  (0x0,0x6a85)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_477878   Logon GUID: {00000000-0000-0000-0000-000000000000}
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-information-00527: IP address 192.168.8.25 has been assigned to Trust (2011-10-17 08:00:35)
+Oct 17 08:00:35 192.168.8.25 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_823810 User=Aemilius Domain=mystery_agency        EventID=528     EventIDCode=528 EventType=8    EventCategory=2 RecordNumber=959        TimeGenerated=1318856435        TimeWritten=1318856435  Message=Successful Logon:   User Name: Aemilius   Domain:  mystery_agency   Logon ID:  (0x0,0x172fc)   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_823810   Logon GUID: {00000000-0000-0000-0000-000000000000}
+Oct 17 08:01:00 security_srv kernel: imklog 5.6.5, log source = /proc/kmsg started.
+Oct 17 08:01:01 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="920" x-info="http://www.rsyslog.com"] start
+Oct 17 08:01:02 security_srv kernel:  [   12.937508] microcode: CPU0 sig=0x6fd, pf=0x1, revision=0xa3
+Oct 17 08:01:02 security_srv kernel:  [   12.984751] microcode: CPU1 sig=0x6fd, pf=0x1, revision=0xa3
+Oct 17 08:01:02 security_srv kernel: [   12.986559] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+Oct 17 08:01:02 security_srv kernel: [   13.275330] microcode: CPU0 updated to revision 0xa4, date = 2010-10-02
+Oct 17 08:01:02 security_srv kernel: [   13.275706] microcode: CPU1 updated to revision 0xa4, date = 2010-10-02
+Oct 17 08:01:02 security_srv kernel:  [   13.605884] ip6_tables: (C) 2000-2006 Netfilter Core Team
+Oct 17 08:01:02 security_srv kernel: [   13.838693] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+Oct 17 08:01:02 security_srv kernel: [   13.876714] ip_tables: (C) 2000-2006 Netfilter Core Team
+Oct 17 08:01:02 security_srv polkitd[1049]: started daemon version 0.99 using authority implementation `local' version `0.99'
+Oct 17 08:01:02 security_srv SuSEfirewall2: Firewall rules set to CLOSE
+Oct 17 08:01:04 security_srv ifup: lo
+Oct 17 08:01:04 security_srv ifup: lo
+Oct 17 08:01:04 security_srv ifup: IP address: 127.0.0.1/8
+Oct 17 08:01:04 security_srv ifup:  
+Oct 17 08:01:04 security_srv ifup:  
+Oct 17 08:01:04 security_srv ifup: IP address: 127.0.0.2/8  
+Oct 17 08:01:04 security_srv ifup: eth0      device: Intel Corporation 82566DM-2 Gigabit Network Connection (rev 02)
+Oct 17 08:01:05 security_srv  kernel: [   16.121283] e1000e 0000:00:19.0: irq 41 for MSI/MSI-X
+Oct 17 08:01:05 security_srv  kernel: [   16.172075] e1000e 0000:00:19.0: irq 41 for MSI/MSI-X
+Oct 17 08:01:05 security_srv  kernel: [   16.172553] ADDRCONF(NETDEV_UP): eth0: link is not ready
+Oct 17 08:01:05 security_srv ifup:    eth0    
+Oct 17 08:01:05 security_srv ifup: IP address: 212.118.247.34/28
+Oct 17 08:01:05 security_srv ifup:  
+Oct 17 08:01:06 security_srv SuSEfirewall2: /var/lock/SuSEfirewall2.booting exists which means system boot in progress, exit.
+Oct 17 08:01:06 security_srv kernel: Kernel logging (proc) stopped.
+Oct 17 08:01:07 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="920" x-info="http://www.rsyslog.com"] exiting on signal 15.
+Oct 17 08:01:07 security_srv kernel: imklog 5.6.5, log source = /proc/kmsg started
+Oct 17 08:01:09 security_srv rsyslogd: [origin software="rsyslogd" swVersion="5.6.5" x-pid="1564" x-info="http://www.rsyslog.com"] start
+Oct 17 08:01:11 security_srv auditd[1600]: Started dispatcher: /sbin/audispd pid: 1602
+Oct 17 08:01:12 security_srv audispd: priority_boost_parser called with: 4
+Oct 17 08:01:12 security_srv audispd: audispd: max_restarts_parser called with: 10
+Oct 17 08:01:12 security_srv audispd: No plugins found, exiting
+Oct 17 08:01:12 security_srv auditd[1600]: Init complete, auditd 2.0.5 listening for events (startup state disable)
+Oct 17 08:01:13 security_srv sm-notify[1618]: Version 1.2.3 starting
+Oct 17 08:01:14 security_srv sshd[1649]: Server listening on 0.0.0.0 port 22
+Oct 17 08:01:14 security_srv sshd[1649]: Server listening on :: port 22
+Oct 17 08:01:15 security_srv kernel: [   17.578874] e1000e: eth0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: RX/TX
+Oct 17 08:01:15 security_srv kernel: [   17.578878] e1000e 0000:00:19.0: eth0: 10/100 speed: disabling TSO
+Oct 17 08:01:15 security_srv kernel:  [  17.579312] ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Oct 17 08:01:15 security_srv kernel: [   18.360923] BIOS EDD facility v0.16 2004-Jun-25, 1 devices found
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Found user #'avahi' (UID 104) and group 'avahi' (GID 106).
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Successfully dropped root privileges.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: avahi-daemon 0.6.28 starting up.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/sftp-ssh.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/ssh.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Loading service file /etc/avahi/services/udisks.service.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Joining mDNS multicast group on interface eth0.IPv4 with address 212.118.247.34.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: New relevant interface eth0.IPv4 for mDNS.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Network interface enumeration completed.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering new address record for fe80::221:9bff:d476:f722 on eth0.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering new address record for 212.118.247.34 on eth0.IPv4.
+Oct 17 08:01:17 security_srv avahi-daemon[1756]: Registering HINFO record with values #'X86_64'/'LINUX'.
+Oct 17 08:01:19 security_srv avahi-daemon[1756]: Server startup complete. Host name is security_srv.local. Local service cookie is 2244099292.
+Oct 17 08:01:20 security_srv acpid: 1 client rule loaded
+Oct 17 08:01:22 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/udisks.service) successfully established.
+Oct 17 08:01:22 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/ssh.service) successfully established.
+Oct 17 08:01:22 security_srv avahi-daemon[1756]: Service "security_srv" (/etc/avahi/services/sftp-ssh.service) successfully established.
+Oct 17 08:01:23 security_srv ntpd[2110]: ntpd 4.2.6p3@1.2290 Tue Jun  7 03:07:00 UTC 2011 (1)
+Oct 17 08:01:23 security_srv ntpd[2110]: proto: precision = 0.116 usec
+Oct 17 08:01:23 security_srv ntpd[2110]: ntp_io: estimated max descriptors: 1024, initial socket boundary: 16
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen and drop on 0 v4wildcard 0.0.0.0 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen and drop on 1 v6wildcard :: UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen normally on 2 lo 127.0.0.1 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen normally on 3 lo 127.0.0.2 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen normally on 4 eth0 212.118.247.34 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen normally on 5 eth0 fe80::221:9bff:d476:f722 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: Listen normally on 6 lo ::1 UDP 123
+Oct 17 08:01:23 security_srv ntpd[2110]: peers refreshed
+Oct 17 08:01:25 security_srv acpid: 1 client rule loaded
+Oct 17 08:01:26 security_srv sssd: Starting up
+Oct 17 08:01:26 security_srv sssd[be[default]]: Starting up
+Oct 17 08:01:26 security_srv sssd[pam]: Starting up
+Oct 17 08:01:27 security_srv sssd[nss]: Starting up
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) STARTUP (1.4.7)
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) bad username (/etc/cron.d/smolt)
+Oct 17 08:01:27 security_srv /usr/sbin/cron[2307]: (CRON) INFO (running with inotify support)
+Oct 17 08:01:28 security_srv smartd[2308]: smartd 5.40 2010-10-16 r3189 [x86_64-unknown-linux-gnu] (SUSE RPM)#012Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net#012
+Oct 17 08:01:28 security_srv smartd[2308]: Opened configuration file /etc/smartd.conf
+Oct 17 08:01:28 security_srv smartd[2308]: Drive: DEVICESCAN, implied #'-a' Directive on line 26 of file /etc/smartd.conf
+Oct 17 08:01:28 security_srv smartd[2308]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda, type changed from #'scsi' to 'sat'
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda [SAT], opened
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda [SAT], found in smartd database.
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda [SAT], is SMART capable. Adding to "monitor" list.
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda [SAT], state read from /var/lib/smartmontools/smartd.WDC_WD800JD_75MSA3-WD_WMAM9CZT2081.ata.state
+Oct 17 08:01:28 security_srv smartd[2308]:  Monitoring 1 ATA and 0 SCSI devices
+Oct 17 08:01:28 security_srv smartd[2308]: Device: /dev/sda [SAT], state written to /var/lib/smartmontools/smartd.WDC_WD800JD_75MSA3-WD_WMAM9CZT2081.ata.state
+Oct 17 08:01:28 security_srv smartd[2308]: smartd has fork()ed into background mode. New PID=2325
+Oct 17 08:01:29 security_srv SuSEfirewall2: Setting up rules from /etc/sysconfig/SuSEfirewall2 ...
+Oct 17 08:01:29 security_srv SuSEfirewall2: SuSEfirewall2: Firewall rules successfully set
+Oct 17 08:01:29 security_srv kernel: [   27.447566] bootsplash: status on console 0 changed to on
+Oct 17 08:01:29 security_srv kernel: [   27.714004] eth0: no IPv6 routers present
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully called chroot.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully dropped privileges
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Sucessfully limited resources.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Running.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Canary thread running.
+Oct 17 08:01:30 security_srv rtkit-daemon[4196]: Watchdog thread running.
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-notification-00257(traffic): start_time="2011-10-17 08:01:32" duration=8 policy_id=4 service=ssh proto=6 src zone=Trust dst zone=DMZ action=Permit sent=1454 rcvd=1454 src=192.168.8.5 dst=212.118.247.34 src_port=23872 dst_port=22 src-xlated ip=192.168.8.5 port=23872 dst-xlated ip=212.118.247.34 port=22 session_id=18732
+Oct 17 08:01:32 security_srv sshd[13337]: Accepted keyboard-interactive/pam for Gaius from 192.168.8.5 port 40632 ssh2
+Oct 17 08:01:32 security_srv useradd[16106]: new account added - account=haxx, uid=31334, gid=0, home=/home/haxx, shell=/bin/bash, by=0
+Oct 17 08:01:32 security_srv useradd[16106]: account added to group - account=test, group=users, gid=100, by=0
+Oct 17 08:01:32 security_srv useradd[16106]: running USERADD_CMD command - script=/usr/sbin/useradd.local, account=haxx, uid=31334, gid=0, home=/home/haxx, by=0
+ns5xt_315093: NetScreen device_id=ns5xt_315093  [Root]system-notification-00257(traffic): start_time="2011-10-17 08:01:32" duration=6 policy_id=4 service=ssh proto=6 src zone=Trust dst zone=web_servers action=Permit sent=1459 rcvd=1459 src=192.168.8.5 dst=212.118.247.1 src_port=59906 dst_port=22 src-xlated ip=192.168.8.5 port=59906 dst-xlated ip=212.118.247.1 port=22 session_id=18733
+Oct 17 08:01:32 web_060692 sshd[19771]: Accepted keyboard-interactive/pam for Gaius from 192.168.8.5 port 40632 ssh2
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=Sulla Domain=mystery_agency        EventID=624     EventIDCode=624 EventType=8    EventCategory=7 RecordNumber=394        TimeGenerated=1318856492        TimeWritten=1318856492  Message=User Account Created:   New Account Name: John   New Domain: agency_win_091894   New Account ID: agency_win_091894\John   Caller User Name:  Sulla  Caller Domain: mystery_agency   Caller Logon ID: (0x0,0x9c378)   Privileges  -  
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=Sulla Domain=mystery_agency        EventID=636     EventIDCode=636 EventType=8    EventCategory=7 RecordNumber=1241        TimeGenerated=1318856492        TimeWritten=1318856492  Message=Security Enabled Local Group Member Added:   Member Name: -   Member ID: agency_win_091894\John   Target Account Name: Administrators   Target Domain: Builtin   Target Account ID: BUILTIN\Administrators   Caller User Name: Sulla   Caller Domain: mystery_agency   Caller Logon ID: (0x0,0xc6cc2)   Privileges: -  
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=Sulla Domain=mystery_agency        EventID=628     EventIDCode=628 EventType=8    EventCategory=7 RecordNumber=628        TimeGenerated=1318856492        TimeWritten=1318856492  Message=User Account password set:   Target Account Name: John   Target Domain: agency_win_091894   Target Account ID: agency_win_091894\John   Caller User Name: Sulla   Caller Domain: mystery_agency   Caller Logon ID: (0x0,0xd8bfa)
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=Sulla Domain=mystery_agency        EventID=626     EventIDCode=626 EventType=8    EventCategory=7 RecordNumber=822        TimeGenerated=1318856492        TimeWritten=1318856492  Message=User Account Enabled:   Target Account Name: John   Target Domain: agency_win_091894   Target Account ID: agency_win_091894\John   Caller User Name: Sulla   Caller Domain: mystery_agency   Caller Logon ID: (0x0,0x24da1)  
+Oct 17 08:01:32 192.168.8.22 AgentDevice=WindowsLog    AgentLogFile=Security   Source=Security Computer=agency_win_091894 User=John Domain=mystery_agency        EventID=534     EventIDCode=534 EventType=16    EventCategory=2 RecordNumber=1100        TimeGenerated=1318856492        TimeWritten=1318856492  Message=Logon Failure:   Reason:  The user has not been granted the requested logon type at this machine    User Name: John   Domain:  mystery_agency   Logon Type: 2   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: agency_win_091894

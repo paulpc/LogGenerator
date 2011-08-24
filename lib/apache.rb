@@ -21,6 +21,7 @@ class Apache<Syslog
     @structure=["/","aboutus.html","contact.html","quote.html","services.html"]
   end
   
+  #log the start/stop/restart command on the daemon
   def apache_daemon(command="restart")
     
     
@@ -46,7 +47,7 @@ class Apache<Syslog
   # will generate random trafic from random IP addesses - think about looking to see if there's a firewall and transmitting traffic there as well.
   # We will need both a search engine crawler traffic and people traffic
   def white_noise()
-    while 1>0
+    while $all_normal
     sleep(rand(6))
     #creating a random string to request
     random_request="/#{(0...rand(15)).map{97.+(rand(25)).chr}.join}.html"

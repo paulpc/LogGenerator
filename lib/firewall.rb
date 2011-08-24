@@ -36,7 +36,7 @@ module Sources
     # generate traffic white noise to confuse participants and to mimic the background noise of the interwebs   
     # pick a public facing IP and generate random traffic at it from the internets at large
     def white_noise
-      while 1>0
+      while $all_normal
         rnd_zone = (@zones.keys-@nat_zones-["localhost"]).sample
         destination=assign(rnd_zone,true)
         source=rand_ip()

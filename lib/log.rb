@@ -5,10 +5,10 @@ module Log
      def log(message)
       if $log_file
         File.open($log_file,"a+") {|logfile|
-          logfile.puts message
+          logfile. print(message+"\r\n")
         }
       else
-        puts(message)
+        print(message+"\r\n")
       end
     
      end

@@ -3,7 +3,7 @@
 
 module Sources
      class Syslog
-       attr_accessor :tty, :shadow
+       attr_accessor :tty, :shadow, :ip, :host
        def initialize(host=nil)
          #generating a random hostname for this computer if the hostname is not already there
         @host=host || "agency_linux_"+rand(999999).to_s.rjust(6,"0")    
@@ -11,7 +11,7 @@ module Sources
         if $firewall
          @ip= $firewall.assign("DMZ")
         else
-        @ip = "192.168.4."+(1+rand(253)).to_s
+          @ip = "192.168.4."+(1+rand(253)).to_s
         end
         hex_ip=[]
         @mac=rand(280533990614619).to_s(16).rjust(12,"0")

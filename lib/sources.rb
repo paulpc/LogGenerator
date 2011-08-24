@@ -2,7 +2,9 @@ require_relative 'sys_log.rb'
 require_relative 'apache.rb'
 require_relative 'firewall.rb'
 require_relative 'bluecoat.rb'
+require_relative 'windows.rb'
 require_relative 'log.rb'
+
 require 'yaml'
 module Sources
 include Log
@@ -21,9 +23,6 @@ def get_time()
 return Time.now+$time_diff  
 end
 
-$directory={}
-File.open( './config/users.yml' ) { |yf| $directory=YAML::load( yf ) }
-
 # create user agent strings based on inputed browser and operating system
 def user_agent(browser="random",os="windows7")
     case os
@@ -36,7 +35,6 @@ def user_agent(browser="random",os="windows7")
     when "osx"
       os_part="Macintosh; Intel Mac OS X 10.7; rv:5.0"
     end
-    
     case browser
     when "firefox"
       user_string="Mozilla/5.0 (#{os_part}) Gecko/20110619 Firefox/5.0"
@@ -56,14 +54,7 @@ def user_agent(browser="random",os="windows7")
     
     return user_string
   end
-  
-  class Windows
-    def initialize(host,ip)
-    @host=host || "agency_win_"+rand(999999).to_s.rjust(6,"0")      
-    @ip=ip || "192.168.4."+rand(255).to_s
-  end
-  end
-  
+    
   class Ftp<Syslog
     def initialize(host,ip)
     @host=host || "ftp_"+rand(999999).to_s.rjust(6,"0")      

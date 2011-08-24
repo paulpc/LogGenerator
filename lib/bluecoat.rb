@@ -81,6 +81,7 @@ module Sources
       log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{user_agent("ie","windowsXP")} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
     end    
     
+    #logs a user into the appliance
     def login(success=true,src_ip=$firewall.assign("Trust",true),user="root")
       if success
       log_admin("\"Administrator login from #{src_ip}, user '#{user}'\"  0 25001E:96   authconsole.cpp:278")
@@ -98,7 +99,6 @@ module Sources
     def white_noise
       urls={}
       #make sure to not break the user/computer combinations once you set usernames to computers. May even consider settign the source as a symbol to the computer name
-      source_ip=$firewall.assign("Trust",true)
       File.open( './config/urls.yml' ) { |yf| urls=YAML::load( yf ) }
       blacklist=@blacklist.values.flatten.uniq
       urls.keys.each {|list|
@@ -106,9 +106,10 @@ module Sources
       }
       urls_array=urls.values.flatten.uniq
       urls=nil
-      while not urls_array.empty?
+      while $all_normal
         dest=urls_array.sample 
-        user=$directory.keys.sample
+        user=$userbase.keys.sample
+        source_ip=$user_base[user].ip
         web_traffic(source_ip,dest,user)
         sleep(rand(2))
       end
