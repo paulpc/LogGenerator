@@ -30,14 +30,14 @@ module Sources
 
     # base procedure to operate with user and group objects
     # performs different actions based on the event_id
-    # 624 - creates the account [target_user]
-    # 642 - changes the account [target_user]
-    # 626 - enables the account [target_user]
-    # 630 - deletes the account [target_user]
-    # 632 - adds [target_user] to the domain group [group] - automatically turned local if the domain group does not exist
-    # 633 - removes [target_user] from the domain group [group] - automatically turned local if the domain group does not exist
-    # 636 - adds [target_user} to local group [group]
-    # 637 - removes [target_user] from local group [group]
+    #   624 - creates the account [target_user]
+    #   642 - changes the account [target_user]
+    #   626 - enables the account [target_user]
+    #   630 - deletes the account [target_user]
+    #   632 - adds [target_user] to the domain group [group] - automatically turned local if the domain group does not exist
+    #   633 - removes [target_user] from the domain group [group] - automatically turned local if the domain group does not exist
+    #   636 - adds [target_user} to local group [group]
+    #   637 - removes [target_user] from local group [group]
     # see: http://www.microsoft.com/technet/support/ee/transform.aspx?ProdName=Windows+Operating+System&ProdVer=5.2&EvtID=[event_id]&EvtSrc=Security for more details on specific a [event_id]
     def usermod(user,target_user, group, event_id=642, target_user_name=target_user)
       if @localusers[user]
@@ -94,15 +94,16 @@ end
     # login piece for windows workstations:
     # user stands for the username logging in. The function will check to see if the user exists in the domain
     # Logon types can be:
-    # 2 – Interactive
-    # 5 – Service
-    # 10 – RemoteInteractive
+    #   2 – Interactive
+    #   5 – Service
+    #   10 – RemoteInteractive
+    #   
     # the event_id for logins:
-    # 528 - successful login
-    # 529 - bad user / password
-    # 593 - account locked out
-    # 533 - user not allowed to logon the computer
-    # 534 - user has not been granted the requested logon type at this machine
+    #   528 - successful login
+    #   529 - bad user / password
+    #   593 - account locked out
+    #   533 - user not allowed to logon the computer
+    #   534 - user has not been granted the requested logon type at this machine
     def login(user, event_id=528, logon_type=2, source=@ip)
       message={:record_number=>rand(1000)+300, :time_generated=>get_time().to_i, :event_type=>16, :event_category=>2, :user=>user}
       #looking for users in the domain list. If the user is unknown to the domain, we'll get a bad password

@@ -41,3 +41,7 @@
   - - Untrust
   - - https
     - http
+- - 8
+  - - Untrust
+  - - DMZ
+  - - ssh

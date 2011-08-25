@@ -3,7 +3,7 @@ require_relative 'ip_conversion.rb'
 module Sources
   class Firewall
     include IpConversion
-    attr_reader :zones, :rule_set, :internal_ip, :ip, :host
+    attr_reader :zones, :rule_set, :internal_ip, :ip, :host, :services
     def initialize(host=nil,ip=nil)
       @assigned_ips=Hash.new
       @session_id=18731
@@ -30,7 +30,7 @@ module Sources
       @internal_ip=assign("firewalls")
       @ip=assign("public_gateway")
       @host= host || "ns5xt_"+rand(999999).to_s.rjust(6,"0")
-    
+     p 
     end
     
     # generate traffic white noise to confuse participants and to mimic the background noise of the interwebs   
@@ -164,8 +164,10 @@ module Sources
       
       if flow[:polid] == 99
         fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=0 policy_id=#{flow[:polid]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{rand(128)} rcvd=#{rand(128)} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} session_id=#{next_session_id}")
+        return false
       else
         fw_log(257,"start_time=\"#{date.strftime("%Y-%m-%d %H:%M:%S")}\" duration=#{rand(10)} policy_id=#{flow[:polid]} service=#{service} proto=#{proto} src zone=#{flow[:src_zone]} dst zone=#{flow[:dst_zone]} action=#{flow[:action]} sent=#{bytes} rcvd=#{bytes} src=#{src} dst=#{dest} src_port=#{src_port} dst_port=#{@services[service].values.first} src-xlated ip=#{xsrc} port=#{src_port} dst-xlated ip=#{xdest} port=#{@services[service].values.first} session_id=#{next_session_id}")
+        return true
       end
     
     end

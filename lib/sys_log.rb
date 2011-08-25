@@ -120,7 +120,30 @@ cookie=rand(2885934096)
 
   end
 
-
+  #procedure to mimic login in linux
+  def login(user,source,legitimate=true)
+    potential_users=@shadow.keys
+    #creating user base
+    $directory.each {|person,groups|
+      potential_users.push(person) if groups.include?("sys_admin")
+    }
+    if potential_users.include?(user)
+      if legitimate
+      sshd("success",user,source)  
+      else
+        sshd("bad password",user,source)
+        # restore the sleep time once you're done with testing
+        # sleep(2)
+      end
+    else
+      sshd("bad user",user,source)
+      # restore the sleep time once you're done with testing
+      # sleep(2)
+    end
+    
+  end
+  
+#the logging behind the ssh-like activities
     def sshd(command="restart",user=nil,source=nil)
             pid=10000+rand(10000)
       #emulating the sshd log. Planning

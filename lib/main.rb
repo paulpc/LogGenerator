@@ -1,5 +1,7 @@
 require_relative 'sources.rb' 
+require_relative 'attacks.rb'
 include Sources
+include Attacks
 
 #set starting time for the event within the Time.new()
 $time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
@@ -26,6 +28,9 @@ $userbase={}
 # assign each user a computer - create the daily logon process
 # at 8:00 everybody loggs on, at 17:00 everybody loggs off
 
+#keeping track of the servers in one hash array in order to keep track of them
+$servers={}
+
 daily_base=Thread.new {
 while $all_normal
   current_time=get_time()
@@ -45,27 +50,26 @@ while $all_normal
 end
 }
 daily_base.run
-
-sleep 60
+sleep 30
 
 #white_noise={}
-linus=Syslog.new("security_srv")
-linus.boot
-#linus.sshd("restart")
-#linus.sshd("bad user","dumbass","192.168.99.98")
-$firewall.traffic($userbase["Gaius"].ip,linus.ip,"ssh")
-linus.sshd("success","Gaius",$userbase["Gaius"].ip)
-#linus.sudo("success","crontab -e","dumbass","root")
-#linus.sudo("success","bash","dumbass","root")
-linus.useradd("haxx","0")
+$servers[:linus]=Syslog.new("security_srv")
+#server[:linus].boot
+$servers[:linus].sshd("restart")
+#server[:linus].sshd("bad user","dumbass","192.168.99.98")
+#$firewall.traffic($userbase["Gaius"].ip,server[:linus].ip,"ssh")
+$servers[:linus].sshd("success","Gaius",$userbase["Gaius"].ip)
+#server[:linus].sudo("success","crontab -e","dumbass","root")
+#server[:linus].sudo("success","bash","dumbass","root")
+#server[:linus].useradd("haxx","0")
 #
-apachez=Apache.new()
-$firewall.traffic($userbase["Gaius"].ip,apachez.ip,"ssh")
-apachez.sshd("success","Gaius",$userbase["Gaius"].ip)
-
-$userbase["Sulla"].useradd("Sulla","John","admin")
-$userbase["Sulla"].usermod("Sulla","John",nil,626)
-$userbase["Sulla"].login("John",534)
+#apachez=Apache.new()
+#$firewall.traffic($userbase["Gaius"].ip,apachez.ip,"ssh")
+#apachez.sshd("success","Gaius",$userbase["Gaius"].ip)
+#
+#$userbase["Sulla"].useradd("Sulla","John","admin")
+#$userbase["Sulla"].usermod("Sulla","John",nil,626)
+#$userbase["Sulla"].login("John",534)
 
 
 #apachez.shadow["test"]={:gid=>"234",:uid=>"324"}
@@ -88,11 +92,31 @@ $userbase["Sulla"].login("John",534)
 #sleep 15
 #white_noise[:web].terminate
 #p "should stop random web traffic"
-p "sleeping for 360 before stopping the thread"
-sleep 360
-$all_normal=false
-p "program over"
+#p "sleeping for 360 before stopping the thread"
+#sleep 6
+#$all_normal=false
+#p "program over"
+
+
 #sleep 15
 #puts "killing the fw white noise"
 #white_noise[:fw].terminate
 
+hacker=Bruteforce.new()
+#serve.port_scan("212.118.247.32/27")
+#hacker.ssh_sweep(:linus)
+
+#p "starting to look for password for Decimus"
+# hacker.ssh_bruteforce(:linus,"Decimus",hacker.ip,true)
+sleep(20)
+$servers[:linus].sudo("success","su -","Decimus","root")
+$servers[:linus].useradd("Dec_hax",rand(500).to_s,user="0")
+$servers[:linus].passwd("Dec_hax","0")
+
+#hacker.rdp_sweep()
+
+#p "changing the firewall rules"
+#$firewall.sysconfig_change($servers[:linus].ip,"Decimus")
+#$firewall.rule_set.push([8,["DMZ"],["Trust"],"ms-term-serv"])
+#sleep(15)
+#hacker.rdp_sweep($servers[:linus].ip)
