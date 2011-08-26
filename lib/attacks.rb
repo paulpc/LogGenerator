@@ -38,6 +38,7 @@ class Bruteforce
     userlist=Attacks::userlist unless userlist
     # first do a comb over of the server and 
       userlist.each {|user|
+        p destination, $servers[destination].ip
         $servers[destination].login(user,@ip,false)  if $firewall.traffic(source,$servers[destination].ip,"ssh")
       }
   end

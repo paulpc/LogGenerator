@@ -1,5 +1,4 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
+require 'socket'
 
 module Log
     #log everything either out in a file
@@ -17,10 +16,22 @@ module Log
         File.open("./output/#{$log_file[self.class.name.split("::").last]}","a+") {|logfile|
           logfile. print(message+"\r\n")
         }
+        elsif $log_file.class == Array
+        $log_file.each {|host|
+         network_log(host,message) 
+        }
+         
       else
         print(message+"\r\n")
       end
     
+     end
+     
+     #sends loglines over the network
+     def network_log(destination, message,port=514)
+       TCPSocket.open(destination,port) {|s|
+         s.puts message
+       }       
      end
      
 end

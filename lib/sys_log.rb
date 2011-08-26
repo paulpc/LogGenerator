@@ -21,7 +21,7 @@ module Sources
         @shadow={}
     end
     
-    def syslog_log(date=nil, program=nil, message=nil)
+    def syslog_log(date=get_time(), program="rsyslogd", message="MARK")
     # log("#{date.strdtime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}")
     log "#{date.strftime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}"
   end

@@ -18,6 +18,13 @@ def rand_ip()
   return ip
 end
 
+def rand_domain(type="www")
+  foreign_domains=[]
+   File.open( './config/mail_domains.yml' ) { |yf| foreign_domains=YAML::load( yf ) }
+   
+   return "#{type}.#{foreign_domains.sample}"
+end
+
 # function to figure out the time from the time difference set up in the main.rb
 def get_time()
 return Time.now+$time_diff  
@@ -62,12 +69,7 @@ def user_agent(browser="random",os="windows7")
   end   
   end
   
-  class Mail<Syslog
-   def initialize(host,ip)
-    @host=host || "mail_"+rand(999999).to_s.rjust(6,"0")      
-    @ip=ip || "192.168.90."+rand(255).to_s
-  end  
-  end
+
 
  
 end

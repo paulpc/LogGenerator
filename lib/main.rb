@@ -6,7 +6,8 @@ include Attacks
 #set starting time for the event within the Time.new()
 $time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
 #$log_file="./output/temp_logs.txt"
-$log_file={"Syslog"=>"messages", "Apache"=>"messages", "Firewall"=>"firewall.log","Windows"=>"Security.log", "Bluecoat"=>"bluecoat_sg_access_log.log"}
+#$log_file={"Syslog"=>"messages", "Apache"=>"messages", "Firewall"=>"firewall.log","Windows"=>"Security.log", "Bluecoat"=>"bluecoat_sg_access_log.log"}
+$log_file=["172.16.48.216"]
 # starting the firewall
 $firewall=Firewall.new()
 # variable that will stay true as long as no major catastrophe happens
@@ -124,8 +125,6 @@ sleep(15)
 hacker.rdp_sweep($servers[:linus].ip)
 
 $servers[:apachez].login("Scipio",$servers[:linus].ip,true)
-
-hacker.ssh_sweep($firewall.zones["mysql_servers"])
 
 #white_noise[:fw].terminate
 #white_noise[:web].terminate
