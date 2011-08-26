@@ -5,7 +5,8 @@ include Attacks
 
 #set starting time for the event within the Time.new()
 $time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
-$log_file="temp_logs.txt"
+#$log_file="./output/temp_logs.txt"
+$log_file={"Syslog"=>"messages", "Apache"=>"messages", "Firewall"=>"firewall.log","Windows"=>"Security.log", "Bluecoat"=>"bluecoat_sg_access_log.log"}
 # starting the firewall
 $firewall=Firewall.new()
 # variable that will stay true as long as no major catastrophe happens
@@ -50,9 +51,9 @@ while $all_normal
 end
 }
 daily_base.run
-sleep 30
+sleep 45
 
-#white_noise={}
+white_noise={}
 $servers[:linus]=Syslog.new("security_srv")
 #server[:linus].boot
 $servers[:linus].sshd("restart")
@@ -63,13 +64,13 @@ $servers[:linus].sshd("success","Gaius",$userbase["Gaius"].ip)
 #server[:linus].sudo("success","bash","dumbass","root")
 #server[:linus].useradd("haxx","0")
 #
-#apachez=Apache.new()
-#$firewall.traffic($userbase["Gaius"].ip,apachez.ip,"ssh")
-#apachez.sshd("success","Gaius",$userbase["Gaius"].ip)
-#
-#$userbase["Sulla"].useradd("Sulla","John","admin")
-#$userbase["Sulla"].usermod("Sulla","John",nil,626)
-#$userbase["Sulla"].login("John",534)
+$servers[:apachez]=Apache.new()
+$firewall.traffic($userbase["Gaius"].ip,$servers[:apachez].ip,"ssh")
+$servers[:apachez].sshd("success","Gaius",$userbase["Gaius"].ip)
+
+$userbase["Sulla"].useradd("Sulla","John","admin")
+$userbase["Sulla"].usermod("Sulla","John",nil,626)
+$userbase["Sulla"].login("John",534)
 
 
 #apachez.shadow["test"]={:gid=>"234",:uid=>"324"}
@@ -77,10 +78,10 @@ $servers[:linus].sshd("success","Gaius",$userbase["Gaius"].ip)
 #apachez.passwd("apache","234")s
 #p "starting white noise"
 
-#white_noise[:web]=Thread.new {apachez.white_noise }
-#white_noise[:fw]=Thread.new {$firewall.white_noise}
-#white_noise[:proxy]=Thread.new {bc_sg.white_noise}
-#white_noise.values.join
+white_noise[:web]=Thread.new {apachez.white_noise }
+white_noise[:fw]=Thread.new {$firewall.white_noise}
+white_noise[:proxy]=Thread.new {bc_sg.white_noise}
+white_noise.values.join
 
 #p "should generate 60 seconds worth of white noise"
 #sleep 5
@@ -94,29 +95,38 @@ $servers[:linus].sshd("success","Gaius",$userbase["Gaius"].ip)
 #p "should stop random web traffic"
 #p "sleeping for 360 before stopping the thread"
 #sleep 6
-#$all_normal=false
+#
 #p "program over"
 
 
-#sleep 15
+sleep 150
 #puts "killing the fw white noise"
-#white_noise[:fw].terminate
+
 
 hacker=Bruteforce.new()
 #serve.port_scan("212.118.247.32/27")
-#hacker.ssh_sweep(:linus)
+hacker.ssh_sweep(:linus)
 
 #p "starting to look for password for Decimus"
-# hacker.ssh_bruteforce(:linus,"Decimus",hacker.ip,true)
+ hacker.ssh_bruteforce(:linus,"Decimus",hacker.ip,true)
 sleep(20)
 $servers[:linus].sudo("success","su -","Decimus","root")
 $servers[:linus].useradd("Dec_hax",rand(500).to_s,user="0")
 $servers[:linus].passwd("Dec_hax","0")
 
-#hacker.rdp_sweep()
+hacker.rdp_sweep()
 
 #p "changing the firewall rules"
-#$firewall.sysconfig_change($servers[:linus].ip,"Decimus")
-#$firewall.rule_set.push([8,["DMZ"],["Trust"],"ms-term-serv"])
-#sleep(15)
-#hacker.rdp_sweep($servers[:linus].ip)
+$firewall.sysconfig_change($servers[:linus].ip,"Decimus")
+$firewall.rule_set.push([8,["DMZ"],["Trust"],"ms-term-serv"])
+$all_normal=false
+sleep(15)
+hacker.rdp_sweep($servers[:linus].ip)
+
+$servers[:apachez].login("Scipio",$servers[:linus].ip,true)
+
+hacker.ssh_sweep($firewall.zones["mysql_servers"])
+
+#white_noise[:fw].terminate
+#white_noise[:web].terminate
+#white_noise[:proxy].terminate
