@@ -20,12 +20,13 @@ module Sources
         @tty=rand(9)+1
         @shadow={}
     end
-    
+    #generate the syslog in the apropriate format with the inputs of date, program and message
     def syslog_log(date=get_time(), program="rsyslogd", message="MARK")
     # log("#{date.strdtime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}")
     log "#{date.strftime("%b %e %H:%M:%S")} #{@host} #{program}: #{message}"
   end
   
+  # simulate the boot procedure
   def boot()
     
 cookie=rand(2885934096)
@@ -85,7 +86,8 @@ cookie=rand(2885934096)
     self.method(:specialized_boot).call
   end
   end
-
+  
+# simulate the shutdown procedure
   def shutdown(command="halt")
 
   if command=="halt"
@@ -122,6 +124,7 @@ cookie=rand(2885934096)
 
   #procedure to mimic login in linux
   def login(user,source,legitimate=true)
+    $firewall.traffic(source,@ip,"ssh")
     potential_users=@shadow.keys
     #creating user base
     $directory.each {|person,groups|
@@ -171,7 +174,11 @@ cookie=rand(2885934096)
       
     end
     
-    
+    # simulate the sudo command. Parameters taken:
+    #   status   - status of the sudo command - defaults to success
+    #   command  - command to be run as the target user
+    #   user     - user initiating the sudo
+    #   target   - user that the command will run as
     def sudo(status="success",command="su -",user="test",target="root")
       arguments=command.split(" ")
       comm_only=arguments.delete_at(0)
@@ -193,6 +200,11 @@ cookie=rand(2885934096)
     end
     end
     
+    # simulate the su command. Parameters taken:
+    #   status   - status of the su command - defaults to success
+    #   command  - parameters for the su command. defaults to -
+    #   user     - user that wants elevated privileges
+    #   target   - user with elevated privileges 
     def su(status="failure",command="-",user="test",target="root")
       case status
     when "failure"
@@ -203,6 +215,11 @@ cookie=rand(2885934096)
     messages.each {|message| syslog_log(get_time(),__method__,message)} unless  messages.to_a.empty? 
     end
     
+    # simulate the crontab command. Parameters taken:
+    #   status   - status of the crontab command - defaults to success
+    #   command  - parameters for crontab: -l or -e. Defaults to -l
+    #   user     - user initiating the crontab
+    #   target   - user for whom the crontab has been edited
     def crontab(status="success",command="-l",user="test",target="root")
             pid=10000+rand(10000)
       case command
@@ -213,7 +230,11 @@ cookie=rand(2885934096)
       end
           messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
     end
-       
+    
+    # simulate the useradd command. Parameters taken:
+    #   account  - user account to be added
+    #   gid      - default group id (GID) the user will be in
+    #   user     - user ID (UID) that performs the useradd
     def useradd(account="test",gid="33",user="0")
       uid=rand(2000)+30000
       pid=10000+rand(10000)
@@ -225,6 +246,10 @@ cookie=rand(2885934096)
     messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
     end
     
+    # simulate the usermod command. Parameters taken:
+    #   account  - user account to be modified
+    #   gid      - group id (GID) the user will be added to
+    #   user     - user ID (UID) that performs the usermod
     def usermod(account="test",gid="100",user="0")
       pid=10000+rand(10000)
       messages=["default group changed - account=#{account}, uid=#{@shadow[account][:uid]}, gid=#{gid}, old gid=#{@shadow[account][:gid]}, by=#{user}"]  
@@ -246,6 +271,9 @@ cookie=rand(2885934096)
              messages.each {|program,message| syslog_log(get_time(),program,message)} unless messages.to_a.empty?  
     end
     
+    # simulate the passwd command. Parameters taken:
+    #   account  - user account who's password will be changed
+    #   user     - user ID (UID) that performs the useradd. if it's nill, the command will fail
     def passwd(account="test",user=nil)
       pid=10000+rand(10000)
       if user
@@ -260,6 +288,7 @@ cookie=rand(2885934096)
       messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?  
     end
     
+    # generate a test 
     def mark()
       #Jul 15 21:05:59 linux-s55c rsyslogd: -- MARK --
       syslog_log(get_time(),host,"rsyslogd"," -- MARK --")

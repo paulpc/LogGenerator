@@ -18,7 +18,7 @@ module Sources
       @tty=rand(9)+1
       @shadow={}
       @random_traffic=true
-      @structure=["/","aboutus.html","contact.html","quote.html","services.html"]
+      @structure=["/","/aboutus.html","/contact.html","/quote.html","/services.php", "/directory.php","/login.php"]
     end
   
     #log the start/stop/restart command on the daemon
@@ -43,7 +43,9 @@ module Sources
     #     request - the url requested from this apache server
     # status_code - the code corresponding to this request - will default to 200 (OK)
     def apache_access_log(source="::1",date=get_time(),ua="random",referer="",request="/",status_code="200",size="-",user="-")
-      unless @structure.include?(request)
+      $firewall.traffic(source,@ip,"http") if $firewall
+      page=request.split("?").first
+      unless @structure.include?(page)
         status_code="404" 
         apache_error(date,"error",source,"File does not exist: #{request}")
       end
@@ -58,15 +60,14 @@ module Sources
       while $all_normal
         sleep(rand(6))
         #creating a random string to request
-        random_request="/#{(0...rand(15)).map{97.+(rand(25)).chr}.join}.html"
-        request=@structure*3+[random_request,"/login.php"]
+        random_request="/#{(0...(rand(15)+1)).map{97.+(rand(25)).chr}.join}.html"
+        request=@structure*3+[random_request]
         source=rand_ip()
-        $firewall.traffic(source,@ip,"http") if $firewall
         apache_access_log(source,get_time(),"random","http%3//www.google.com/search%3widgets+agency+ok",request.sample) 
       end
     
     end
-  
+  # generates an error log line
     def apache_error(date=get_time(),level="error",client="127.0.0.1",message="File does not exist: /imagez")
       log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}")
     

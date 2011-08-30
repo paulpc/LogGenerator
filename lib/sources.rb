@@ -4,6 +4,7 @@ require_relative 'firewall.rb'
 require_relative 'bluecoat.rb'
 require_relative 'windows.rb'
 require_relative 'log.rb'
+require_relative 'mail.rb'
 
 require 'yaml'
 module Sources

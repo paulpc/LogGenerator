@@ -42,6 +42,6 @@
   - - https
     - http
 - - 8
+  - - mail_servers
   - - Untrust
-  - - DMZ
-  - - ssh
+  - - smtp

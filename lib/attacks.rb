@@ -62,6 +62,25 @@ class Bruteforce
     }
   end
   
+  #do a bit of recon on the web server and focus on the directory
+  def web_recon(victim,source=@ip)
+        requests=[]
+          1.upto(250) { requests.push("/#{(0...(rand(15)+1)).map{97.+(rand(25)).chr}.join}.html") }
+          requests+=victim.structure
+          requests.sample(requests.length).each {|req|
+            victim.apache_access_log(source,get_time(),"random","",req)     
+            sleep rand(2)
+          }
+        users=userlist()
+        users+=$directory.keys
+        users.sample(users.length).each {|user|
+            request="/directory.php?name=#{user}&details=ALL"
+            victim.apache_access_log(source,get_time(),"random","",request)
+            sleep rand(2)
+        }
+        
+  end
+  
 end
   
 #class for creating spam emails

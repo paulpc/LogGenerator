@@ -1,6 +1,7 @@
 
 module Sources
   class BluecoatSG
+    attr_reader :categories, :blacklist, :host, :ip
     def initialize(host="BlueCoatProxy_"+rand(999999).to_s.rjust(6,"0"))
       @host=host
       if $firewall
@@ -10,9 +11,7 @@ module Sources
       end
       # the categories present here are just a small sample (and they are not even using the Blue Coat categorization engine
       @categories={}
-      #start_time=get_time
       File.open( './config/categories.yml' ) { |yf| @categories=YAML::load( yf ) }
-      #p "finished readind categories in #{(get_time()-start_time).to_i} seconds"
       @blacklist={}
       File.open( './config/blacklist.yml' ) { |yf| @blacklist=YAML::load( yf ) }
       @status_actions={"200"=>"TCP_NC_MISS","401"=>"TCP_DENIED","307"=>"TCP_AUTH_REDIRECT","302"=>"TCP_AUTH_REDIRECT","403"=>"CONTENT_FILTER_DENIED","304"=>"TCP_HIT"}
@@ -70,15 +69,22 @@ module Sources
       return {:user=>user, :group=>group, :categories=>cat_app, :filter_result=>filter_result, :exception_id=>exception_id, :status=>status, :host=>host, :path=>path, :query=>query}
     end
     
-    def web_traffic(source,  dest, user_name="-", referer="-")
+    # generate logs for web traffic with the followinf parameters:
+    # => source     - source IP
+    # => user_name  - name of the user browsing the web
+    # => dest       - destination host
+    # => referer    - page refering the user to the website
+    # => userag     - user agent of the browser - defaults to Internet Explorer on windowsXP
+    def web_traffic(source,  user_name="-",dest=generate_url(),  referer="-", userag=user_agent("ie","windowsXP"))
       analysis=analize_traffic(user_name,dest)
       if dest =~ /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/
         dest_ip=dest.scan(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/).flatten.first
       else
         dest_ip=rand_ip()
       end
+      
       $firewall.traffic(source,dest_ip,"http")
-      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{user_agent("ie","windowsXP")} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
+      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{$domain_name}\\#{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{userag} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
     end    
     
     #logs a user into the appliance
@@ -97,23 +103,31 @@ module Sources
     
     # creating whitenoise by picking a random url to generate the traffic, as well as a random user from the pool of users
     def white_noise
-      urls={}
-      #make sure to not break the user/computer combinations once you set usernames to computers. May even consider settign the source as a symbol to the computer name
-      File.open( './config/urls.yml' ) { |yf| urls=YAML::load( yf ) }
-      blacklist=@blacklist.values.flatten.uniq
-      urls.keys.each {|list|
-        urls[list]=nil if blacklist.include?(list)
-      }
-      urls_array=urls.values.flatten.uniq
-      urls=nil
+
       while $all_normal
-        dest=urls_array.sample 
         user=$userbase.keys.sample
         source_ip=$user_base[user].ip
-        web_traffic(source_ip,dest,user)
+        web_traffic(source_ip,user)
         sleep(rand(2))
       end
+      
     end  
+    
+    #generates a random url from the list
+    def generate_url()
+       #make sure to not break the user/computer combinations once you set usernames to computers. May even consider settign the source as a symbol to the computer name
+      unless @urls
+      @urls={}
+      File.open( './config/urls.yml' ) { |yf| @urls=YAML::load( yf ) }
+      blacklist=@blacklist.values.flatten.uniq
+      @urls.keys.each {|list|
+        @urls[list]=nil if blacklist.include?(list)
+      }
+      end
+
+    urls_array=@urls.values.flatten.uniq
+    return urls_array.sample
+    end
   end
 
 

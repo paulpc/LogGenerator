@@ -3,13 +3,17 @@
 
 module Sources
   class Windows
-    attr_reader :ip,:mac,:host, :localusers
+    attr_reader :ip,:mac,:host, :localusers, :logged_in_user
     def initialize(host="agency_win_"+rand(999999).to_s.rjust(6,"0"))
       @host=host
       @mac=rand(281474976710655).to_s(16)
       @ip=($firewall.dhcp("Trust") if $firewall) || "192.168.4."+rand(255).to_s
       @localusers={"Administrator"=>["Administrators"]}
       @passwd={"Administrator"=>get_time()-33*24*60*60}
+      @logged_in_user=nil
+      ib=Thread.new {idle_browsing()}
+      ib.run
+      
     end
   
     # adds another local user.  Use with the last parameter of "admin" in order to add an administrative user
@@ -22,6 +26,19 @@ module Sources
       usermod(user,target_user,nil,628)
     end
 
+    # browse the interwebs for a certain site
+    def browse_web(site)
+      $servers[:bc_sg].web_traffic(@ip,@logged_in_user,site)
+    end
+    
+    #generates idle browsing for the user while the object exists
+    def idle_browsing()
+      while $all_normal
+        sleep rand(120)
+        $servers[:bc_sg].web_traffic(@ip,@logged_in_user)       
+      end
+    end
+        
     # initiates deletion of useraccount [target_user] by [user]
     def userdel(user, target_user)
       group=@localusers[target_user].to_a.first || $directory[target_user].to_a.first || "Users"
@@ -121,6 +138,7 @@ end
         message[:event_type]=8
         message[:event_category]=2
         message[:message]="Successful Logon:   User Name: #{user}   Domain:  #{$domain_name}   Logon ID:  (0x0,0x#{rand(1048575).to_s(16)})   Logon Type: #{logon_type}   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: #{@host}   Logon GUID: {00000000-0000-0000-0000-000000000000}#{remote_login}"
+        @logged_in_user=user
       when 529
         # Unknown user or bad password
         message[:message]="Logon Failure:   Reason:  Unknown user name or bad password   User Name: #{user}   Domain:  #{$domain_name}   Logon Type: #{logon_type}   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: #{@host}#{remote_login}"
