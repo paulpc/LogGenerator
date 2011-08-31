@@ -138,7 +138,7 @@ end
         message[:event_type]=8
         message[:event_category]=2
         message[:message]="Successful Logon:   User Name: #{user}   Domain:  #{$domain_name}   Logon ID:  (0x0,0x#{rand(1048575).to_s(16)})   Logon Type: #{logon_type}   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: #{@host}   Logon GUID: {00000000-0000-0000-0000-000000000000}#{remote_login}"
-        @logged_in_user=user
+        @logged_in_user=user if logon_type==2 or logon_type==10
       when 529
         # Unknown user or bad password
         message[:message]="Logon Failure:   Reason:  Unknown user name or bad password   User Name: #{user}   Domain:  #{$domain_name}   Logon Type: #{logon_type}   Logon Process: User32     Authentication Package: Negotiate   Workstation Name: #{@host}#{remote_login}"

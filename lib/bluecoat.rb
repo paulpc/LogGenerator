@@ -38,7 +38,7 @@ module Sources
       potential_groups=$directory[user]
       blacklist_applicable=[]
       potential_groups.each {|po_gr|
-        if not blacklist_applicable.empty? and @blacklist[po_gr]
+        if blacklist_applicable.empty? and @blacklist[po_gr]
           blacklist_applicable=@blacklist[po_gr]
           group=po_gr
         end      
@@ -98,7 +98,7 @@ module Sources
     end
     
     def log_admin(message)      
-      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S%z%Z")}  #{message}")
+      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S%z%Z")}  #{message}","bluecoat_messages")
     end
     
     # creating whitenoise by picking a random url to generate the traffic, as well as a random user from the pool of users
@@ -113,6 +113,17 @@ module Sources
       
     end  
     
+    #generates a random blacklisted url
+    def generate_forbidden_url()
+      urls_array={}
+      File.open( './config/urls.yml' ) { |yf| urls_array=YAML::load( yf ) }
+      bl=["adult","porn","gambling","drugs","mixed_adult"]
+      bad_urls=[]
+      urls_array.each {|key,urls|
+        bad_urls+=urls if bl.include?(key)
+      }
+      return bad_urls.sample
+    end
     #generates a random url from the list
     def generate_url()
        #make sure to not break the user/computer combinations once you set usernames to computers. May even consider settign the source as a symbol to the computer name

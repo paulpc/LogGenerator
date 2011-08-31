@@ -20,8 +20,8 @@ module Tools
       }   
  end
  
-    def generate_mind_map
-      File.open("scenario_components.mm","w") {|mm|
+    def generate_mind_map(filename="./output/scenario_start.mm")
+      File.open(filename,"w") {|mm|
         mm.puts("<map version=\"0.8.1\">")
       }
       # set the base node as the name of the domain

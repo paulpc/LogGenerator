@@ -16,7 +16,8 @@ module Sources
       @ip.split(".").each {|octet| hex_ip+=[octet.to_i.to_s(16).rjust(2,"0")]}
       @ip_v6="fe80::221:9bff:#{hex_ip[0]+hex_ip[1]}:#{hex_ip[2]+hex_ip[3]}"
       @tty=rand(9)+1
-      @shadow={}
+      @shadow={"root"=>{:gid=>"0", :uid=>"0"}}
+      @etc_group={"0"=>"root","100"=>"users"}
       @random_traffic=true
       @structure=["/","/aboutus.html","/contact.html","/quote.html","/services.php", "/directory.php","/login.php"]
     end
@@ -49,7 +50,7 @@ module Sources
         status_code="404" 
         apache_error(date,"error",source,"File does not exist: #{request}")
       end
-      log("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H/%M/%S %z")}] \"GET #{request}\" #{status_code} #{size} \"#{referer}\" \"#{user_agent(ua)}\"")
+      log("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H/%M/%S %z")}] \"GET #{request}\" #{status_code} #{size} \"#{referer}\" \"#{user_agent(ua)}\"","access_log")
    
     end
   
@@ -69,7 +70,7 @@ module Sources
     end
   # generates an error log line
     def apache_error(date=get_time(),level="error",client="127.0.0.1",message="File does not exist: /imagez")
-      log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}")
+      log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}","error_log")
     
     end
   end

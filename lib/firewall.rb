@@ -114,7 +114,7 @@ module Sources
       dest_zone=get_zone(destinationIP) || "Untrust"
       permit=nil
       @rule_set.each {|rule_id,src_zones,dest_zones,services|
-        if src_zones.include?(src_zone) and dest_zones.include?(dest_zone) and services.include?(service)
+        if (src_zones.include?(src_zone) or src_zones==["all"]) and (dest_zones.include?(dest_zone) or dest_zones == ["all"]) and (services.include?(service) or services == ["all"])
           permit={:polid=>rule_id,:action=>"Permit",:src_zone=>src_zone,:dst_zone=>dest_zone}
         end
       }

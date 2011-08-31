@@ -23,7 +23,7 @@ def rand_domain(type="www")
   foreign_domains=[]
    File.open( './config/mail_domains.yml' ) { |yf| foreign_domains=YAML::load( yf ) }
    
-   return "#{type}.#{foreign_domains.sample}"
+   return "#{type}.#{foreign_domains.sample.strip}"
 end
 
 # function to figure out the time from the time difference set up in the main.rb

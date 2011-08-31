@@ -18,7 +18,8 @@ module Sources
         @ip.split(".").each {|octet| hex_ip+=[octet.to_i.to_s(16).rjust(2,"0")]}
         @ip_v6="fe80::221:9bff:#{hex_ip[0]+hex_ip[1]}:#{hex_ip[2]+hex_ip[3]}"
         @tty=rand(9)+1
-        @shadow={}
+        @shadow={"root"=>{:gid=>"0", :uid=>"0"}}
+        @etc_group={"0"=>"root", "100"=>"users"}
     end
     #generate the syslog in the apropriate format with the inputs of date, program and message
     def syslog_log(date=get_time(), program="rsyslogd", message="MARK")
@@ -93,7 +94,7 @@ cookie=rand(2885934096)
   if command=="halt"
     messages=messages=[["shutdown[9801]","shutting down for system halt"],
     ["init","Switching to runlevel: 0"]]
-  elsif commmand=="reboot"
+  elsif command=="reboot"
     messages=[["shutdown[9801]","shutting down for system reboot"],
     ["init","Switching to runlevel: 6"]]
   end
@@ -132,7 +133,9 @@ cookie=rand(2885934096)
     }
     if potential_users.include?(user)
       if legitimate
-      sshd("success",user,source)  
+        sshd("success",user,source)  
+      elsif not legitimate and @shadow.keys.include?(user)
+        sshd("bad user",user,source)  
       else
         sshd("bad password",user,source)
         # restore the sleep time once you're done with testing
@@ -168,7 +171,7 @@ cookie=rand(2885934096)
       when "success"
         messages=["Accepted keyboard-interactive/pam for #{user} from #{source} port 40632 ssh2"]
       when "disconnect"
-        mesages=["Received disconnect from #{source}: 11: disconnected by user"]
+        messages=["Received disconnect from #{source}: 11: disconnected by user"]
       end
                 messages.each {|message| syslog_log(get_time(),"#{__method__}[#{pid}]",message)} unless messages.to_a.empty?
       
@@ -239,7 +242,7 @@ cookie=rand(2885934096)
       uid=rand(2000)+30000
       pid=10000+rand(10000)
       messages=["new account added - account=#{account}, uid=#{uid}, gid=#{gid}, home=/home/#{account}, shell=/bin/bash, by=#{user}",
-      "account added to group - account=test, group=users, gid=100, by=#{user}",
+      "account added to group - account=#{account}, group=#{@etc_group[gid]}, gid=#{gid}, by=#{user}",
       "running USERADD_CMD command - script=/usr/sbin/useradd.local, account=#{account}, uid=#{uid}, gid=#{gid}, home=/home/#{account}, by=#{user}"
       ]
       @shadow[account]={:gid=>gid, :uid=>uid}
