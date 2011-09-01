@@ -68,10 +68,10 @@ module Sources
       end
     
     end
+    
   # generates an error log line
     def apache_error(date=get_time(),level="error",client="127.0.0.1",message="File does not exist: /imagez")
-      log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level} [client #{client}] #{message}","error_log")
-    
+      log("[#{date.strftime("%a %b %e %H:%M:%S %Y")}] [#{level}] [client #{client}] #{message}","error_log")
     end
   end
 end

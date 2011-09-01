@@ -12,7 +12,7 @@ $log_file={"Syslog"=>"messages", "Apache"=>"messages", "Mail"=>"mail.log", "Fire
 #$log_file=["172.16.48.216"]
 
 # loading user directory
- $directory={}
+$directory={}
 File.open( './config/users.yml' ) { |yf| $directory=YAML::load( yf ) }
 # setting domain name
 $domain_name="dopct"
@@ -26,10 +26,10 @@ $servers[:bc_sg]=BluecoatSG.new()
 $all_normal=true
 
 # initializing all the servers
- $servers[:email]=Mail.new()
- $servers[:linus]=Syslog.new("security_srv")
- $servers[:apachez]=Apache.new()
- $servers[:apachez_qa]=Apache.new()
+$servers[:email]=Mail.new()
+$servers[:linus]=Syslog.new("security_srv")
+$servers[:apachez]=Apache.new()
+$servers[:apachez_qa]=Apache.new()
 
 
 
@@ -47,22 +47,22 @@ $userbase={}
 
 
 daily_base=Thread.new {
-while $all_normal
-  current_time=get_time()
-  if not current_time.saturday? and not current_time.sunday? and current_time.hour==8 and current_time.min==00
-    $directory.keys.each {|username|
-    windows_box=Windows.new()
-    windows_box.login(username)
-    $userbase[username]=windows_box
-    sleep(rand(4))
-    }
-  elsif not current_time.saturday? and not current_time.sunday? and current_time.hour==17 and current_time.min==00
-    $directory.about:homekeys.each {|username|
-      $userbase[username]=nil
-    }
+  while $all_normal
+    current_time=get_time()
+    if not current_time.saturday? and not current_time.sunday? and current_time.hour==8 and current_time.min==00
+      $directory.keys.each {|username|
+        windows_box=Windows.new()
+        windows_box.login(username)
+        $userbase[username]=windows_box
+        sleep(rand(4))
+      }
+    elsif not current_time.saturday? and not current_time.sunday? and current_time.hour==17 and current_time.min==00
+      $directory.about:homekeys.each {|username|
+        $userbase[username]=nil
+      }
+    end
+    sleep 60
   end
-  sleep 60
-end
 }
 daily_base.run
 #for testing we'll stop the white noise after the 
@@ -84,7 +84,7 @@ Tools::generate_mind_map
 p "[#{Time.now}] starting the reconnesaince"
 hacker=Bruteforce.new()
 $firewall.zones.values.flatten.each {|zone|
-hacker.port_scan(zone)  if zone !~ /192\.168/ and zone !~ /127\.0\.0/
+  hacker.port_scan(zone)  if zone !~ /192\.168/ and zone !~ /127\.0\.0/
 }
 p "[#{Time.now}] should start web recon here"
 # continuing with a scan of the web servers
@@ -127,18 +127,18 @@ p "[#{Time.now}] vendor will now try to log in while attacker attakcs"
 actions={}
 actions[:hacker]=Thread.new {
   while $all_normal
-  sleep 300
-  random_hacker=Bruteforce.new()
-  random_hacker.ip=rand_ip()
-  $firewall.zones.values.flatten.each {|zone|
-  random_hacker.port_scan(zone)  if zone !~ /192\.168/ and zone !~ /127\.0\.0/
-  sleep 15
-  }
-  sleep 5
-  random_hacker.web_recon($servers[:apachez_qa])
-  sleep 120
-  random_hacker.ssh_sweep(:apachez_qa)
-  random_hacker=nil
+    sleep 300
+    random_hacker=Bruteforce.new()
+    random_hacker.ip=rand_ip()
+    $firewall.zones.values.flatten.each {|zone|
+      random_hacker.port_scan(zone)  if zone !~ /192\.168/ and zone !~ /127\.0\.0/
+      sleep 15
+    }
+    sleep 5
+    random_hacker.web_recon($servers[:apachez_qa])
+    sleep 120
+    random_hacker.ssh_sweep(:apachez_qa)
+    random_hacker=nil
   end
 }
 #actions[:hacker].run
@@ -184,11 +184,11 @@ hacked_user="-"
 p "[#{Time.now}] attacker turns this server into and unsuccessful ssh proxy - the bluecoat proxy will stop the traffic"
 actions[:proxy]=Thread.new {
   while $all_normal
-  attacker_ip=rand_ip()
-  $servers[:apachez_qa].login("utilizator",attacker_ip,true)
-  $servers[:bc_sg].web_traffic($servers[:apachez_qa].ip, hacked_user,$servers[:bc_sg].generate_forbidden_url, "-", user_agent("firefox","linux"))
-  $servers[:apachez_qa].sshd("disconnect","utilizator",attacker_ip)  
-  sleep(rand(20))
+    attacker_ip=rand_ip()
+    $servers[:apachez_qa].login("utilizator",attacker_ip,true)
+    $servers[:bc_sg].web_traffic($servers[:apachez_qa].ip, hacked_user,$servers[:bc_sg].generate_forbidden_url, "-", user_agent("firefox","linux"))
+    $servers[:apachez_qa].sshd("disconnect","utilizator",attacker_ip)  
+    sleep(rand(20))
   end
 }
 
@@ -202,7 +202,7 @@ $servers[:apachez_qa].sudo("success","/home/brutus/framework-4.0.0-linux-mini.ru
 
 sleep 60
 $userbase.values {|pc|
-$firewall.traffic($servers[:apachez_qa], pc.ip, "microsoft-ds")  
+  $firewall.traffic($servers[:apachez_qa], pc.ip, "microsoft-ds")  
 }
 # reverse shell
 $firewall.traffic($userbase["Quintus"].ip,$servers[:apachez_qa].ip,"sun-answerbook")
@@ -214,7 +214,17 @@ sleep 30
 
 $userbase.each {|user,pc|
   pc.login("Sulla", 528, 5, $servers[:apachez_qa].ip)
-sleep 20+rand(25)
+  sleep 20+rand(25)
+}
+
+actions[:botnet]=Thread.new {
+  while $all_normal
+    if get_time.sec == 5
+      $userbase.each {|user,pc|
+        pc.browse_web("0-2u.com")
+      }
+    end
+  end
 }
 
 p "[#{Time.now}] turn the web server into a spam machine"
@@ -228,9 +238,8 @@ actions[:spam]=Thread.new {
   end
 }
 
-
 print "[#{Time.now}] waiting to generate some more traffic"
-1.upto(60){
+1.upto(100){
   print "."
   sleep 10
 }
