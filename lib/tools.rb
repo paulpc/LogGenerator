@@ -1,8 +1,18 @@
 module Tools
   # will generate a mind map of the current environment
+  
+  def take_snapshot()
+    @snapshots=[] unless @snapshots
+    @snapshot.push({:domain_name=>$domain_name,:users=>$directory,:servers=>$servers, :firewall=>$firewall})
+  end
+  
+  def diff()
+    
+  end
+  
  def generate_child_node(text,position=nil)
     pos=" POSITION=\"#{position}\""   if position
-        File.open("scenario_components.mm","a+") {|mm|
+        File.open(@filename,"a+") {|mm|
         mm.puts("<node CREATED=\"#{Time.now.to_i}#{rand(899)+100}\" ID=\"scenario_#{text.gsub(/[\.\ ]/,"_")}#{rand(3000)}\" MODIFIED=\"#{Time.now.to_i}#{rand(999)}\"#{position} TEXT=\"#{text}\"\/>")
       }
  end
@@ -10,18 +20,19 @@ module Tools
  def generate_parent_node(text,position=nil, folded=nil)
         pos=" POSITION=\"#{position}\""   if position
         fold=" FOLDED=\"true\"" if folded
-        File.open("scenario_components.mm","a+") {|mm|
+        File.open(@filename,"a+") {|mm|
         mm.puts("<node CREATED=\"#{Time.now.to_i}#{rand(899)+100}\" ID=\"scenario_#{text.gsub(/[\.\ ]/,"_")}#{rand(3000)}\" MODIFIED=\"#{Time.now.to_i}#{rand(999)}\"#{pos}#{fold} TEXT=\"#{text}\">")
       }
  end
  def close_parent_node
-      File.open("scenario_components.mm","a+") {|mm|
+      File.open(@filename,"a+") {|mm|
         mm.puts("</node>")
       }   
  end
  
-    def generate_mind_map(filename="./output/scenario_start.mm")
-      File.open(filename,"w") {|mm|
+    def generate_mind_map(filename="./output/mm/scenario_start.mm")
+      @filename=filename
+      File.open(@filename,"w") {|mm|
         mm.puts("<map version=\"0.8.1\">")
       }
       # set the base node as the name of the domain
@@ -59,6 +70,20 @@ module Tools
         generate_child_node(server.host)
         generate_child_node(server.ip)
         generate_child_node(server.class.to_s)
+        if defined?(server.shadow) and server.shadow and not server.shadow.empty?
+          generate_parent_node("Local Accounts")
+          server.shadow.keys.each {|account|
+            generate_child_node(account)
+          }
+          close_parent_node
+        end
+        if defined?(server.etc_group) and server.etc_group and not server.etc_group.empty?
+          generate_parent_node("Local Groups")
+          server.etc_group.values.each {|etc_group|
+            generate_child_node(etc_group)
+          }
+          close_parent_node
+        end
         if server.class.to_s == "Sources::Apache"
           generate_parent_node("sitemap")
           server.structure.each {|page|
@@ -113,7 +138,7 @@ module Tools
            
       #close the main node
       close_parent_node
-      File.open("scenario_components.mm","a+") {|mm|
+      File.open(@filename,"a+") {|mm|
         mm.puts("</map>")
       }
     end

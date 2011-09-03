@@ -84,7 +84,9 @@ module Sources
       end
       
       $firewall.traffic(source,dest_ip,"http")
-      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{$domain_name}\\#{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{userag} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
+      #log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{$domain_name}\\#{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{userag.gsub(/\s/,"%20")} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
+      # for the purpose of the exercise we will try without the status
+      log("#{get_time().strftime("%Y-%m-%d %H:%M:%S")} #{rand(16)} #{source} #{analysis[:user]} #{$domain_name}\\#{analysis[:group]} #{analysis[:exception_id]} #{analysis[:filter_result]} \"#{analysis[:categories].join(",")}\" #{referer} - #{analysis[:status]} #{@status_actions[analysis[:status]]} GET text/xml;%20charset=UTF-8 http #{analysis[:host]} 80 #{analysis[:path]} #{analysis[:query]} - #{userag.gsub(/\s/,"%20")} #{@ip} #{rand(256)} #{rand(2560)} - \"none\" \"none\"")  
     end    
     
     #logs a user into the appliance

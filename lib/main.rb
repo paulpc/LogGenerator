@@ -8,7 +8,7 @@ include Tools
 #set starting time for the event within the Time.new()
 $time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
 #$log_file="./output/temp_logs.txt"
-$log_file={"Syslog"=>"messages", "Apache"=>"messages", "Mail"=>"mail.log", "Firewall"=>"firewall.log","Windows"=>"WindowsSecurity.log", "BluecoatSG"=>"proxySG_access_logs.log"}
+$log_file={"Syslog"=>"messages", "Apache"=>"messages", "Mail"=>"mail.log", "Firewall"=>"firewall.log","Windows"=>"WindowsSecurity.log", "BluecoatSG"=>"bcoat_proxysg.log"}
 #$log_file=["172.16.48.216"]
 
 # loading user directory
@@ -32,8 +32,8 @@ $servers[:apachez]=Apache.new()
 $servers[:apachez_qa]=Apache.new()
 
 
-
-
+# set to false when not testing to shorten the execution time by a few minutes
+test=false
 
 # creating the windows environment with logged in users  - will become the base for the bluecoat whitenoise
 # 
@@ -101,7 +101,7 @@ sleep 2
 $servers[:apachez_qa].apache_access_log(vendor_ip,get_time(),user_agent("ie","windows7"),"","/status.php")
 sleep 10
 $servers[:email].log_received({:host=>"vendor.com",:ip=>vendor_ip,:mail=>"innatentive.engineer@vendor.com"},$servers[:email].email_directory["Scipio"],true)
-sleep 25
+sleep 25 unless test
 $firewall.admin_login($userbase["Scipio"].ip,"success",'Scipio')
 sleep(10)
 p "[#{Time.now}] improperly setting up firewall rules"
@@ -156,9 +156,6 @@ sleep(2)
 $servers[:apachez_qa].apache_access_log(vendor_ip,get_time(),user_agent("chrome","windows7"),"","/status.php")
 $servers[:apachez_qa].sshd("disconnect","vendor_root",vendor_ip)
 
-
-
-
 sleep 15
 p "[#{Time.now}] attempting a bruteforce for the <vendor_root> user"
 hacker.ssh_bruteforce(:apachez_qa, "vendor_root", rand_ip(),true)
@@ -174,11 +171,11 @@ sleep 2
 $servers[:apachez_qa].passwd("root")
 sleep 5
 $servers[:apachez_qa].structure+=["/bunatati/","/bunatati/unelte.html","/bunatati/pornosaguri.html","/bunatati/marfuri.html", "/bunatati/proxy_instructions.html"]
-sleep 30
+sleep 30 unless test
 $servers[:apachez_qa].apache_daemon("restart")
 $servers[:apachez_qa].useradd("utilizator","100","0")
 $servers[:apachez_qa].sshd("disconnect","brutus",hacker.ip)
-sleep 120
+sleep 120 unless test
 
 hacked_user="-"
 p "[#{Time.now}] attacker turns this server into and unsuccessful ssh proxy - the bluecoat proxy will stop the traffic"
@@ -193,14 +190,14 @@ actions[:proxy]=Thread.new {
 }
 
 
-sleep 120
+sleep 120 unless test
 p "[#{Time.now}] getting metasploit for the server to grab credentials after the unsuccessful sweep"
 $servers[:apachez_qa].login("brutus",hacker.ip,true)
 hacker.rdp_sweep($servers[:apachez_qa].ip)
 $servers[:apachez_qa].sudo("success","chmod +xxx /home/brutus/framework-4.0.0-linux-mini.run","brutus","root")
 $servers[:apachez_qa].sudo("success","/home/brutus/framework-4.0.0-linux-mini.run","brutus","root")
 
-sleep 60
+sleep 60 unless test
 $userbase.values {|pc|
   $firewall.traffic($servers[:apachez_qa], pc.ip, "microsoft-ds")  
 }
@@ -210,11 +207,11 @@ hacked_user="Sulla"
 
 p "[#{Time.now}] coopt the desktops and make them into bots"
 $userbase["Quintus"].browse_web("www2.personal-ckguard.rr.nu/bot10297.exe")
-sleep 30
+sleep 30 unless test
 
 $userbase.each {|user,pc|
   pc.login("Sulla", 528, 5, $servers[:apachez_qa].ip)
-  sleep 20+rand(25)
+  sleep 20+rand(25) unless test
 }
 
 actions[:botnet]=Thread.new {
