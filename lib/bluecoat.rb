@@ -1,7 +1,7 @@
 
 module Sources
   class BluecoatSG
-    attr_reader :categories, :blacklist, :host, :ip
+    attr_reader :categories, :blacklist, :host, :ip, :mac
     def initialize(host="BlueCoatProxy_"+rand(999999).to_s.rjust(6,"0"))
       @host=host
       if $firewall
@@ -9,6 +9,7 @@ module Sources
       else
         @ip= "192.168.1."+(17+rand(30)).to_s
       end
+      @mac=rand(280533990614619).to_s(16).rjust(12,"0")
       # the categories present here are just a small sample (and they are not even using the Blue Coat categorization engine
       @categories={}
       File.open( './config/categories.yml' ) { |yf| @categories=YAML::load( yf ) }

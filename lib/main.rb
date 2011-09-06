@@ -3,7 +3,6 @@ require_relative 'attacks.rb'
 require_relative 'tools.rb'
 include Sources
 include Attacks
-include Tools
 
 #set starting time for the event within the Time.new()
 $time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
@@ -33,7 +32,7 @@ $servers[:apachez_qa]=Apache.new()
 
 
 # set to false when not testing to shorten the execution time by a few minutes
-test=false
+test=true
 
 # creating the windows environment with logged in users  - will become the base for the bluecoat whitenoise
 # 
@@ -80,7 +79,7 @@ p "[#{Time.now}] white noise generator should have started if true=#{$all_normal
 #leaving 30 minutes of peace and quiet before digestive by-product colides with stationary rotary wing object
 #sleep 1800 if $all_normal
 p "[#{Time.now}] generating mind map before all the evil happens"
-Tools::generate_mind_map
+generate_mind_map
 p "[#{Time.now}] starting the reconnesaince"
 hacker=Bruteforce.new()
 $firewall.zones.values.flatten.each {|zone|
