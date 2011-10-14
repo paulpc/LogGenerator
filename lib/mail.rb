@@ -58,7 +58,7 @@ module Sources
         syslog_log(get_time(),"sendmail[#{pid}]","p79DwQkF#{pid.rjust(6,"0")}: to=<#{recipient[:mail]}>, delay=00:00:00, xdelay=00:00:00, mailer=esmtp, pri=121362, relay=#{recipient[:host]}. [#{recipient[:ip]}], dsn=2.0.0, stat=Sent (p79DwQkF#{pid.rjust(6,"0")} Message accepted for delivery)")
 
       else
-        error_msg_pool=["451 Temporary recipient validation error", "Connection timed out with #{recipient[:host]}.","Name server: #{recipient[:host]}: host name lookup failure"]
+        error_msg_pool=["451 Temporary recipient validation error", "Connection timed out with #{recipient[:host]}."]
         syslog_log(get_time(),"sendmail[#{pid}]","p7O1F0JB#{pid.rjust(6,"0")}: to=#{recipient[:mail]}, delay=1+12:33:58, xdelay=00:00:00, mailer=esmtp, pri=6780538, relay=#{recipient[:host]}., dsn=4.0.0, stat=Deferred: #{error_msg_pool.sample}")
       end
     end

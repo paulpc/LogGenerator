@@ -50,7 +50,7 @@ module Sources
         status_code="404" 
         apache_error(date,"error",source,"File does not exist: #{request}")
       end
-      log("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H/%M/%S %z")}] \"GET #{request}\" #{status_code} #{size} \"#{referer}\" \"#{user_agent(ua)}\"","access_log")
+      log("#{source} - #{user} [#{date.strftime("%d/%b/%Y:%H:%M:%S %z")}] \"GET #{request}\" #{status_code} #{size} \"#{referer}\" \"#{user_agent(ua)}\"","access_log")
    
     end
   

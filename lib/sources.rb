@@ -15,7 +15,7 @@ include Log
 def rand_ip()
   begin 
     ip="#{rand(253)+1}.#{rand(253)+1}.#{rand(253)+1}.#{rand(253)+1}"
-  end while ip !~ /192\./ and ip !~ /172\./ and ip !~ /10\./
+  end while ip =~ /^192\.168/ and ip =~ /^172\./ and ip =~ /^10\.\d+\.\d+\.\d+/
   return ip
 end
 

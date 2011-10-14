@@ -1,0 +1,22 @@
+## YAML Template.
+---
+webmaster:
+  - B0B2F4
+user:
+- C8FFED
+bc_admin:
+- 53D5FF
+sys_admin:
+- B4F026
+dba:
+- 19FFFF
+accounting:
+- EABDFF
+infosec:
+- FFA9A9
+mail_admin:
+- FFFF7F
+management:
+- AAEE9A
+ws_admin:
+- A8DFCD

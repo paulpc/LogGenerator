@@ -13,15 +13,18 @@ module Log
       elsif $log_file.class == Hash
         # logging for multiple files. Will use the sender class names to separate the logs
         #p self.class.name.split("::").last
-        if filename
-          File.open("./output/#{filename}","a+") {|logfile|
+#        if 
+#          File.open("./output/#{filename}","a+") {|logfile|
+#          logfile. print(message+"\r\n")
+#        }
+#          File.utime(get_time(),get_time(),"./output/#{filename}")
+#        else
+          fname="./output/#{get_time().strftime("%Y-%m-%d-%H-%M")}--#{self.host.to_s}--#{filename || $log_file[self.class.name.split("::").last] || "misc.log"}"
+        File.open(fname,"a+") {|logfile|
           logfile. print(message+"\r\n")
         }
-        else
-        File.open("./output/#{$log_file[self.class.name.split("::").last] || "misc.log"}","a+") {|logfile|
-          logfile. print(message+"\r\n")
-        }
-        end
+        File.utime(get_time(),get_time(),fname)
+#        end
         elsif $log_file.class == Array
         $log_file.each {|host|
          network_log(host,message) 

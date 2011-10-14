@@ -5,7 +5,8 @@ include Sources
 include Attacks
 
 #set starting time for the event within the Time.new()
-$time_diff=Time.new(2011,10,17,8,0,0,"-05:00")-Time.now
+$time_diff=Time.new(2011,9,12,8,0,0,"-05:00")-Time.now
+#$time_diff=0
 #$log_file="./output/temp_logs.txt"
 $log_file={"Syslog"=>"messages", "Apache"=>"messages", "Mail"=>"mail.log", "Firewall"=>"firewall.log","Windows"=>"WindowsSecurity.log", "BluecoatSG"=>"bcoat_proxysg.log"}
 #$log_file=["172.16.48.216"]
@@ -32,7 +33,7 @@ $servers[:apachez_qa]=Apache.new()
 
 
 # set to false when not testing to shorten the execution time by a few minutes
-test=true
+test=false
 
 # creating the windows environment with logged in users  - will become the base for the bluecoat whitenoise
 # 
@@ -48,13 +49,15 @@ $userbase={}
 daily_base=Thread.new {
   while $all_normal
     current_time=get_time()
+    #p current_time
     if not current_time.saturday? and not current_time.sunday? and current_time.hour==8 and current_time.min==00
       $directory.keys.each {|username|
         windows_box=Windows.new()
         windows_box.login(username)
         $userbase[username]=windows_box
-        sleep(rand(4))
+        sleep(rand(3))
       }
+      p "[#{Time.now}] Finished starting up all the clients"
     elsif not current_time.saturday? and not current_time.sunday? and current_time.hour==17 and current_time.min==00
       $directory.about:homekeys.each {|username|
         $userbase[username]=nil
@@ -65,7 +68,7 @@ daily_base=Thread.new {
 }
 daily_base.run
 #for testing we'll stop the white noise after the 
-sleep 45
+sleep 360
 
 
 white_noise={}
@@ -77,7 +80,7 @@ white_noise[:mail]=Thread.new {$servers[:email].white_noise}
 
 p "[#{Time.now}] white noise generator should have started if true=#{$all_normal}"
 #leaving 30 minutes of peace and quiet before digestive by-product colides with stationary rotary wing object
-#sleep 1800 if $all_normal
+sleep 180 unless test
 p "[#{Time.now}] generating mind map before all the evil happens"
 generate_mind_map
 p "[#{Time.now}] starting the reconnesaince"
@@ -88,7 +91,11 @@ $firewall.zones.values.flatten.each {|zone|
 p "[#{Time.now}] should start web recon here"
 # continuing with a scan of the web servers
 hacker.web_recon($servers[:apachez])
-
+p "[#{Time.now}] generating some more white noise before the event"
+1.upto(100){
+  print "."
+  sleep 10
+} unless test
 # email from vendor to one of the sys}admins (scipio)
 # opening port in firewall, creating user on the qa machine and setting a crappy password
 p "[#{Time.now}] vendor changes are abrewing"
@@ -238,6 +245,8 @@ print "[#{Time.now}] waiting to generate some more traffic"
 1.upto(100){
   print "."
   sleep 10
-}
+} unless test
 $all_normal=false
 p "done"
+p "generating the after mindmap"
+generate_mind_map("./output/mm/scenario_end.mm",false)

@@ -1,0 +1,22 @@
+---
+Sources::Firewall:
+  - FF917F
+  - - password
+    - gohome
+Sources::Apache:
+  - A0A2F4
+  - - penguin
+    - xmag
+Sources::Syslog:
+  - 94D006
+  - - penguin
+Sources::Mail:
+  - FFFF7F
+  - - penguin
+    - Mail
+Sources::BluecoatSG:
+  - 33B5FF
+  - - stop
+Sources::Windows:
+  - A8DFCD
+  - - ksmiletris
