@@ -1,9 +1,29 @@
 == LogGenerator
 
-This projects attempts to create a small log generator that will eventually take a scenario file
-as well as the network parameters (zones, ip ranges, type of servers) and will spit out log traffic
-for a log analysis appliance
+This projects attempts to create a small log generator that will eventually take a scenario fileas well as the network parameters (zones, ip ranges, type of servers) and will spit out log traffic for a log analysis appliance
 
+As of *right now* the scenario is fixed in the main.rb file. It outputs the logs in the ./lib/output/ folder with different file names for each source. Whenever I put this together to facilitate a log analysis TableTopExercise, I wanted to focus on a few specific log sources including:
+- Windows machines / servers (I think i modeled it after XP and 2003 servers)
+- linux logs
+- sendmail logs
+- bluecoat web proxy logs
+- apache web logs
+- firewall logs that may look like juniper logs.
+
+The current default scenario looks something like:
+1. generating some random bening traffic on the firewall and web proxy
+2. generating the servers (a mail server, a linux servers, 2 apache servers)
+3. generating some random and bening logs from the windows hosts
+4. starting some reconnesaince events with a port scan
+5. continuing with some web app scanning
+6. an email comes from a vendor
+7. an admin logs in the firewall and sets up some bad rules
+8. vendor will try to log into the server. At the same time, the servers are getting attacked
+9. ssh bruteforce happens on the vendor account
+10. evil is brewing on the compromised server, and starts spreading
+
+Part of the materials I gave out in the TTX was a mind map of the services / users / hosts before the compromise, and one after the compromise (those should be automatically generated (though maybe in an old version of FreeMind) and placed in ./lib/output/mm/
+  
   Copyright (C) 2011  Paul Poputa-Clean <praetor44@gmail.com>
 
   This program is free software: you can redistribute it and/or modify
