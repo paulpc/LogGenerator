@@ -2,6 +2,8 @@
 
 This projects attempts to create a small log generator that will eventually take a scenario fileas well as the network parameters (zones, ip ranges, type of servers) and will spit out log traffic for a log analysis appliance
 
+Before you try it, please create the ./lib/output/ and ./lib/output/mm folders. I'll fix this later, i just didn't want to upload all the resulting logs to github.
+
 As of *right now* the scenario is fixed in the main.rb file. It outputs the logs in the ./lib/output/ folder with different file names for each source. Whenever I put this together to facilitate a log analysis TableTopExercise, I wanted to focus on a few specific log sources including:
 - Windows machines / servers (I think i modeled it after XP and 2003 servers)
 - linux logs
